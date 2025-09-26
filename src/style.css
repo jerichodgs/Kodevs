@@ -442,7 +442,7 @@ body.light-mode #heroCaption {
 body.light-mode #imaginative {
     font-weight: 700;
     color: gold;
-    text-shadow: 0 0 5px rgba(19, 19, 19, 0.699), 0 0 10px rgba(54, 53, 53, 0.712);
+    text-shadow: 0 0 1px rgba(19, 19, 19, 0.699), 0 0 3px rgba(54, 53, 53, 0.712);
 }
 
 /* About Section */
@@ -976,6 +976,11 @@ hr {
     justify-self: center;
 }
 
+body.light-mode .socials-pic {
+
+    justify-self: center;
+}
+
 #ghlogo {
     grid-area: ghlogo;
     height: 50px;
@@ -984,8 +989,8 @@ hr {
 
 body.light-mode #ghlogo{ 
     content: url("/githubdark.png");
-    width: auto;
-    height: 80px;
+    height: 55px;
+    width: 55px;
 }
 
 #lilogo {
@@ -996,9 +1001,8 @@ body.light-mode #ghlogo{
 }
 
 body.light-mode #lilogo{ 
-    content: url("/githubdark.png");
-    width: auto;
-    height: 80px;
+    content: url("/linkedindark.png");
+    margin-right: 15px;
 }
 
 #gmlogo {
@@ -1008,9 +1012,7 @@ body.light-mode #lilogo{
 }
 
 body.light-mode #gmlogo{ 
-    content: url("/githubdark.png");
-    width: auto;
-    height: 80px;
+    content: url("/emaillight.png");
 }
 
 #numlogo {
@@ -1020,9 +1022,9 @@ body.light-mode #gmlogo{
 }
 
 body.light-mode #numlogo{ 
-    content: url("/githubdark.png");
-    width: auto;
-    height: 80px;
+    content: url("/phonelight.png");
+    height: 55px;
+    width: 64px;
 }
 
 #iglogo {
@@ -1033,9 +1035,12 @@ body.light-mode #numlogo{
 }
 
 body.light-mode #iglogo{ 
-    content: url("/githubdark.png");
-    width: auto;
-    height: 80px;
+    content: url("/instagramlight.png");
+    margin-right: 12px;
+}
+
+body.light-mode .airplane{ 
+    content: url("/airplanelight.png");
 }
 
 .socials1 {
