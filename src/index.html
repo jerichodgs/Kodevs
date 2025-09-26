@@ -124,29 +124,36 @@
     </div>
 
     <div class = "flexContainer" id="contact">
+
         <h1 class = "contactSection">Let's Talk!</h1>
-        <div class="contactContainer">
-            <h1>Send a message!</h1>
-            
-            <div class="namesubj">
-                <div class = "namecontainer">
-                    <h4>Name: </h4>
-                        <input type="text" class="textbox" id="name">
+            <div class="contactContainer">
+                
+                <div class = "emailContainer">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contactLeft">
+
+                        <div class="contactLeftTitle">
+                            <h1 class="sectiontitle" id="contactTitle">Send an Email</h1>
+                        </div>
+
+                            <input type="hidden" name="access_key" value="c3bf4445-bfde-4fba-8d67-20d588f7bb01">
+                            <input type="text" name="name" class="contactInputs" placeholder="Your Name" required>
+                            <input type="email" name="email" class="contactInputs" placeholder="Your Email" required>
+                            <textarea name="message" class="contactInputs" placeholder="Your Message" required></textarea>
+
+                            <div class="sendContainer">
+                                <button type="submit" id="sendbtn">Send<img id="arrowsymbol" src="/arrow.png"></button>
+                            </div>
+
+                    </form>
                 </div>
 
-                <div class = "subjcontainer">
-                    <h4>Subject: </h4>
-                        <input type="text" class="textbox" id="subj">
+                <hr>
+
+                <div class = "otherContacts">
+                    <h1 class="sectiontitle" id="contactTitle">Let's Connect</h1>
                 </div>
+
             </div>
-
-            <div class="msgcontainer">
-                <h4>Your message: </h4><input type="text" class="textbox" id="msg">
-            </div>
-
-            <button type="submit" id="sendbtn">Send</button>
-
-        </div>
     </div>
 
     <script src = "script.js" ></script>

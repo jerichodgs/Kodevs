@@ -479,15 +479,16 @@ body.light-mode #imaginative {
 
 .aboutContainer {
     display: flex;
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
-    width: 1100px;
+    
+    box-sizing: border-box;
+    width: 1200px;
     margin: 50px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 40px;
+
     border-radius: 5px;
     border: 0.1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+
     background-color: rgba(32, 32, 32, 0.5);
     backdrop-filter: blur(1.2px);
     -webkit-backdrop-filter: blur(8px);
@@ -505,6 +506,10 @@ body.light-mode #imaginative {
 .aboutText {
     display: flex;
     flex-direction: column;
+}
+
+.aboutText .sectiontitle{
+    margin-top: 0;
 }
 
 body.light-mode .aboutSection {
@@ -597,7 +602,7 @@ body.light-mode .loclogo {
 
 .sectiontitle {
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-family: "Inter";
     font-size: 3em;
     font-weight: 500;
@@ -694,7 +699,8 @@ body.light-mode .projectsSection {color: rgba(0, 0, 0, 0.377);}
     font-weight: 100;
     color: white;
 
-    width: 1150px;
+    box-sizing: border-box;
+    width: 1200px;
     padding: 20px;
 
     border-radius: 5px;
@@ -815,15 +821,24 @@ body.light-mode .contactSection {
     color: rgba(0, 0, 0, 0.377)
 }
 
+.contactSection {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 45px;
+}
+
 .contactContainer {
     font-family: "Inter";
     font-weight: 100;
     color: white;
 
-    width: 1150px;
-    margin: 50px;
-    padding: 20px;
-    justify-items: center;
+    box-sizing: border-box;
+    width: 1200px;
+    padding: 40px;
+    margin-bottom: 130px;
+    display: flex;
+    flex-direction: row;
+
 
     border-radius: 5px;
     border: 0.1px solid rgba(255, 255, 255, 0.2);
@@ -843,103 +858,89 @@ body.light-mode .contactContainer {
     backdrop-filter: blur(1px);
 }
 
-.textbox {
-    background-color: #ece9e9;
-    border-radius: 5px;
+#contactTitle {
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
-body.light-mode .textbox {
-    border: 1px solid rgba(0, 0, 0, 0.205);
-    backdrop-filter: blur(1.2px);
-    -webkit-backdrop-filter: blur(8px);
-}
-
-.namesubj {
-    display: flex;
-    gap: 100px;
-}
-
-.namecontainer {
+.contactLeft {
     display: flex;
     flex-direction: column;
+    align-items: start;
+    gap: 25px;
 }
 
-.subjcontainer {
-    display: flex;
-    flex-direction: column;
+.contactInputs {
+    font-family: Inter;
+    font-weight: 300;
+    font-size: 20px;
+    border-radius: 10px;
+
+    width: 500px;
+    height: 50px;
+
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    color: #000000;
 }
 
-h4 {
-    margin-bottom: 15px;
-    font-weight: 200;
-}
-
-#name, #subj {
-    width: 250px;
-    height: 30px;
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
-    margin-bottom: 20px;
-}
-
-#msg {
-    width: 600px;
+.contactLeft textarea {
+    padding-top: 10px;
     height: 200px;
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
 }
 
-body.light-mode #msg, body.light-mode #name, body.light-mode #subj {
+body.light-mode .contactInputs {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sendContainer {
+    display: flex;
+    flex-direction: row;
+    align-self: end;
 }
 
 #sendbtn {
     display: flex;
-    position: relative;
-    left: 250px;
-
-    width: 100px;
-    height: 40px;
-
-    margin-top: 30px;
     justify-content: center;
     align-items: center;
 
-    background-color: rgba(255, 217, 0, 0);
-    border-radius: 5px;
+    width: 140px;
+    height: 50px;
+    padding-left: 20px;
+
+    background: linear-gradient(45deg, gold, orange);
     border: 1px solid rgba(255, 255, 255, 0.164);
+    border-radius: 30px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(1.2px);
-    -webkit-backdrop-filter: blur(8px);
 
     color: #ffffff;
-    font-size: 1.1em;
-    font-family: "Inter";
-    font-weight: 400;
+    font: 400 20px "Inter";
 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+#arrowsymbol {
+    width: 30px;
 }
 
 #sendbtn:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(255,255,255,0.2);
-    cursor: pointer;
 }
 
-body.light-mode #sendbtn:hover{
-    transform: scale(1.1);
+body.light-mode #sendbtn:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
 }
 
+hr {
+   height: 380px;
+   width: 1px;
+   margin-left: 80px;
+   margin-right: 80px;
 
-body.light-mode #sendbtn {
-    background-color: #ece9e9;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.205);
-    backdrop-filter: blur(1.2px);
-    -webkit-backdrop-filter: blur(8px);
-
-    color: #000000;
-    font-size: 1.1em;
-    font-family: "Inter";
-    font-weight: 400;
+   align-self: center;
+   border: none;
+   background-color: #adadad;
 }
