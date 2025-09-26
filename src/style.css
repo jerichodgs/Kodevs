@@ -542,7 +542,7 @@ body.light-mode .aboutContainer {
     font-size: 2em;
     font-weight: 400;
     color: rgb(255, 255, 255);
-    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px rgba(255, 255, 255, 0.322);
+    text-shadow: 0 0 3px rgb(255, 255, 255), 0 0 10px rgba(255, 255, 255, 0.322);
 }
 body.light-mode .myname {
     color: rgb(0, 0, 0);
@@ -589,6 +589,7 @@ body.light-mode .loclogo {
 .aboutme {
     margin: 0;
     position: relative;
+    font-family: "Inter";
     font-size: large;
     font-weight: 300;
     text-align: justify;
@@ -669,7 +670,7 @@ body.light-mode .techstack {
 }
 
 body.light-mode #githublogo {
-    content: url("/githubicon.png");
+    content: url("/githubdark.png");
     width: auto;
     height: 80px;
 }
@@ -696,7 +697,7 @@ body.light-mode .projectsSection {color: rgba(0, 0, 0, 0.377);}
 
 .projectsContainer {
     font-family: "Inter";
-    font-weight: 100;
+    font-weight: 200;
     color: white;
 
     box-sizing: border-box;
@@ -936,11 +937,145 @@ body.light-mode #sendbtn:hover {
 
 hr {
    height: 380px;
-   width: 1px;
-   margin-left: 80px;
-   margin-right: 80px;
+   margin-left: 70px;
+   margin-right: 70px;
 
    align-self: center;
-   border: none;
    background-color: #adadad;
 }
+
+/* Let's Connect Section */
+.connect-subtext {
+    font-weight: 150;
+    font-size: 1.5em;
+    text-align: start;
+
+    width: 480px;
+    margin: 0;
+}
+
+.socials-grid {
+    font-weight: 500;
+    gap: 5px;
+    margin-top: 10px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "ghlogo ghacc"
+        "lilogo liacc"
+        "gmlogo gmacc"
+        "numlogo numacc"
+        "iglogo igacc"
+    ;
+}
+
+.socials-pic {
+    margin-right: 15px;
+    justify-self: center;
+}
+
+#ghlogo {
+    grid-area: ghlogo;
+    height: 50px;
+    width: 50px;
+}
+
+body.light-mode #ghlogo{ 
+    content: url("/githubdark.png");
+    width: auto;
+    height: 80px;
+}
+
+#lilogo {
+    grid-area: lilogo;
+    height: 55px;
+    width: 55px;
+    margin-right: 20px;
+}
+
+body.light-mode #lilogo{ 
+    content: url("/githubdark.png");
+    width: auto;
+    height: 80px;
+}
+
+#gmlogo {
+    grid-area: gmlogo;
+    height: 60px;
+    width: 60px;
+}
+
+body.light-mode #gmlogo{ 
+    content: url("/githubdark.png");
+    width: auto;
+    height: 80px;
+}
+
+#numlogo {
+    grid-area: numlogo;
+    height: 55px;
+    width: 52px;
+}
+
+body.light-mode #numlogo{ 
+    content: url("/githubdark.png");
+    width: auto;
+    height: 80px;
+}
+
+#iglogo {
+    grid-area: iglogo;
+    height: 60px;
+    width: 60px;
+    margin-right: 20px;
+}
+
+body.light-mode #iglogo{ 
+    content: url("/githubdark.png");
+    width: auto;
+    height: 80px;
+}
+
+.socials1 {
+    font-size: 20px;
+    grid-area: ghacc;
+}
+.socials2 {
+    font-size: 20px;
+    grid-area: liacc;
+}
+.socials3{
+    font-size: 20px;
+    grid-area: gmacc;
+}
+.socials4 {
+    font-size: 20px;
+    grid-area: numacc;
+}
+.socials5 {
+    font-size: 20px;
+    grid-area: igacc;
+}
+
+.airplane {
+    position: relative;
+    right: 230px;
+    top: 315px;
+    z-index: -1;
+
+    height: 250px;
+}
+
+.footer {
+    height: 20px;
+    padding: 30px 0;
+    text-align: center;
+
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 300;
+    color: #a1a1a1;
+}
+
