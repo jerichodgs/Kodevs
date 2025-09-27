@@ -1,12 +1,29 @@
-const toggle = document.getElementById("theme-toggle");
+const desktopToggle = document.getElementById("theme-toggle-desktop");
+const mobileToggle = document.getElementById("theme-toggle-mobile");
 const body = document.body;
 
+function setTheme(isLight) {
+  body.classList.toggle("light-mode", isLight);
+
+  if (desktopToggle) desktopToggle.checked = isLight;
+  if (mobileToggle) mobileToggle.checked = isLight;
+}
+
 function syncToggleWithBody() {
-  toggle.checked = body.classList.contains("light-mode");
+  const isLight = body.classList.contains("light-mode");
+  setTheme(isLight);
 }
 
 syncToggleWithBody();
 
-toggle.addEventListener("change", () => {
-  body.classList.toggle("light-mode", toggle.checked);
-});
+if (desktopToggle) {
+  desktopToggle.addEventListener("change", () => {
+    setTheme(desktopToggle.checked);
+  });
+}
+
+if (mobileToggle) {
+  mobileToggle.addEventListener("change", () => {
+    setTheme(mobileToggle.checked);
+  });
+}

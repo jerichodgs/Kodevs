@@ -27,22 +27,22 @@ body.light-mode {
   --accent: gold;
 }
 
-
 body.light-mode {
     background-color: #f5f5f5;
     background-image: radial-gradient(#adadad 1px, transparent 1px);
     color: #000000;
 }
 
-/* Navigation Bar */
 nav {
     display: flex;
     justify-content: space-between;
     position: fixed;
+
     top: 0;
     left: 0;
-    width: 100%;   /* make sure it spans across */
+    width: 100%;   
     z-index: 1000;
+
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(1.2px);
@@ -53,10 +53,15 @@ body.light-mode nav {
     position: fixed;
     top: 0;
     z-index: 1000;
+
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(1px);
+}
+
+.toggleswitch {
+    display: none;
 }
 
 .brandContainer {
@@ -98,8 +103,6 @@ body.light-mode #brandName:hover{
     color: gold;
 }
 
-/* Theme toggle button */
-
 #theme-toggle {
   position: absolute;
   opacity: 0;
@@ -108,7 +111,11 @@ body.light-mode #brandName:hover{
   pointer-events: none;
 }
 
-.switch {
+.switch-nav {
+    display: none;
+}
+
+.switch-hero {
   position: relative;
   display: inline-block;
   width: 56px;
@@ -118,7 +125,7 @@ body.light-mode #brandName:hover{
   bottom: 50px;
 }
 
-.switch input {
+.switch-hero input {
   position: absolute;
   opacity: 0;
   width: 0;
@@ -192,7 +199,6 @@ input:not(:checked) + .slider .sun {
   opacity: 0;
   transition-delay: 0s;
 }
-
 
 body.light-mode #theme-toggle {
     color: #111;
@@ -284,9 +290,63 @@ body.light-mode .contactLink:hover {
     background-color: gold;
 }
 
-/* Main Content */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 15px;
+}
 
-/* Hero Section */
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+body.light-mode .hamburger span {
+    background-color: #000;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 62px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(12, 11, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    z-index: 999;
+}
+
+body.light-mode .mobile-menu {
+    background-color: rgba(245, 245, 245, 0.95);
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu .link {
+    display: block;
+    text-align: center;
+    margin: 15px 0;
+    font-size: 1.2em;
+}
 
 .heroContainer {
     position: relative;
@@ -295,15 +355,18 @@ body.light-mode .contactLink:hover {
     justify-content: center;
     align-items: center;
     font-family: "Inter";
+
     gap: 50px;
-    margin-top: 150px;
+    margin-top: 185px;
     margin-bottom: 100px;
     justify-self: center;
     width: max-content;
+    
     padding: 40px 60px;
     border-radius: 12px;
     color: #ffffff;
     z-index: 1;
+    
 }
 
 .heroContainer::before {
@@ -311,20 +374,15 @@ body.light-mode .contactLink:hover {
     position: absolute;
     inset: 0;
     border-radius: 12px;
-
-    
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
-
-    
     mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%),
                 linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%);
     -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%),
                         linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%);
     mask-composite: intersect;
     -webkit-mask-composite: destination-in;
-
     pointer-events: none;
     z-index: -1;
 }
@@ -336,7 +394,7 @@ body.light-mode .contactLink:hover {
 }
 
 #heroTitle {
-    font-size: 7em;
+    font-size: 6em;
     font-weight:250;
     color: white;
     font-style: italic;
@@ -372,7 +430,6 @@ body.light-mode .contactLink:hover {
     font-weight: 200;
     font-size: 1em;
     color: #f5f5f5;
-
 }
 
 #imaginative {
@@ -390,22 +447,17 @@ body.light-mode .contactLink:hover {
     width: auto;
 }
 
+body.light-mode #loclogo{
+    width: 21px;
+    height: 24px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+    content: url(/loclogolight.png);
+}
+
 body.light-mode .heroContainer {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-family: "Inter";
-    gap: 50px;
-    margin-top: 150px;
-    margin-bottom: 100px;
-    justify-self: center;
-    width: max-content;
-    padding: 40px 60px;
-    border-radius: 12px;
     color: #ffffff;
-    z-index: 1;
 }
 
 body.light-mode .heroContainer::before {
@@ -413,20 +465,15 @@ body.light-mode .heroContainer::before {
     position: absolute;
     inset: 0;
     border-radius: 12px;
-
-    
     background: rgba(255, 255, 255, 0.425);
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
-
-    
     mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%),
                 linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%);
     -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%),
                         linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%);
     mask-composite: intersect;
     -webkit-mask-composite: destination-in;
-
     pointer-events: none;
     z-index: -1;
 }
@@ -434,24 +481,32 @@ body.light-mode .heroContainer::before {
 body.light-mode .heroText {
     display: flex;
     flex-direction: column;
+    align-content: center;
 }
 
 body.light-mode #heroTitle {
-    font-size: 7em;
+    font-size: 6em;
     font-weight: 250;
     color: rgb(0, 0, 0);
     font-style: italic;
     margin: 0;
 }
 
-body.light-mode #heroSubtext {
+body.light-mode #subtextJunior{
     font-weight: 300;
     font-size: 2em;
+    color: rgb(0, 0, 0);
+    margin: 0;
+}
+
+body.light-mode .phtext {
+    font-size: 2em;
+    margin-bottom: 6px;
+    margin-left: 0;
     color: rgb(0, 0, 0);
 }
 
 body.light-mode #heroCaption {
-
     font-weight: 200;
     font-size: 1em;
     color: #000000;
@@ -462,8 +517,6 @@ body.light-mode #imaginative {
     color: gold;
     text-shadow: 0 0 1px rgba(19, 19, 19, 0.699), 0 0 3px rgba(54, 53, 53, 0.712);
 }
-
-/* About Section */
 
 .gridContainer {
     display: grid;
@@ -488,7 +541,6 @@ body.light-mode #imaginative {
     font-size: 10em;
     font-style: italic;
     color: rgba(245, 245, 245, 0.377);
-
     position: relative;
     top: 100px;
     left: -500px;
@@ -496,17 +548,14 @@ body.light-mode #imaginative {
 }
 
 .aboutContainer {
-    
     box-sizing: border-box;
     height: 920px;
     width: 1200px;
     margin: 50px;
     padding: 40px;
-
     border-radius: 5px;
     border: 0.1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
-
     background-color: rgba(32, 32, 32, 0.5);
     backdrop-filter: blur(1.2px);
     -webkit-backdrop-filter: blur(8px);
@@ -519,14 +568,12 @@ body.light-mode #imaginative {
     display: flex;
     flex-direction: column;
     grid-area: header;
-
     justify-content: center;
 }
 
 .aboutText {
     display: flex;
     flex-direction: column;
-
     align-items: center;
 }
 
@@ -536,7 +583,6 @@ body.light-mode .aboutSection {
     font-size: 10em;
     font-style: italic;
     color: rgba(0, 0, 0, 0.377);
-
     position: relative;
     top: 100px;
     left: -500px;
@@ -562,6 +608,7 @@ body.light-mode .aboutContainer {
     color: rgb(255, 255, 255);
     text-shadow: 0 0 3px rgb(255, 255, 255), 0 0 10px rgba(255, 255, 255, 0.322);
 }
+
 body.light-mode .myname {
     color: rgb(0, 0, 0);
     text-shadow: 0 0 5px rgba(255, 255, 255, 0), 0 0 10px rgba(7, 7, 7, 0.178);
@@ -573,15 +620,12 @@ body.light-mode .myname {
     font-size: 1.2em;
 }
 
-
 .aboutSubtext {
     display: flex;
     margin-top: 0;
     margin-bottom: 0px;
     align-items: center;
 }
-
-
 
 body.light-mode .loclogo {
     width: 20px;
@@ -594,17 +638,14 @@ body.light-mode .loclogo {
     height: auto;
     width: 200px;
     margin-bottom: 20px;
-
     border: 3px solid rgb(71, 71, 71);
     border-radius: 1pc;
-
 }
 
 .downloadCV {
     font-family: "Inter";
     font-weight: 200;
     font-size: 0.3em;
-
     border-radius: 5px;
     position: relative;
     top: -10px;
@@ -647,7 +688,6 @@ body.light-mode .loclogo {
     height: auto;
     margin: 0;
 }
-
 
 .html, .css, .js, .twcss, .github {
     justify-items: center;
@@ -705,15 +745,12 @@ body.light-mode .locationpic {
     content: url("/maloloslightpic.jfif");
 }
 
-/* Projects Section */
-
 .projectsSection {
     font-family: "Inter";
     font-weight: 300;
     font-size: 10em;
     font-style: italic;
     color: rgba(245, 245, 245, 0.377);
-
     position: relative;
     top: 25px;
     margin: 0;
@@ -726,11 +763,9 @@ body.light-mode .projectsSection {color: rgba(0, 0, 0, 0.377);}
     font-weight: 200;
     font-size: 0.8em;
     color: white;
-
     box-sizing: border-box;
     width: 1200px;
     padding: 20px;
-
     border-radius: 5px;
     border: 0.1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
@@ -759,7 +794,6 @@ body.light-mode .projectsContainer {
     margin-bottom: 100px;
     margin-top: 10px;
     justify-items: center;
-
 }
 
 .project2 {
@@ -832,14 +866,12 @@ body.light-mode .projectpic {
     text-align: center;
 }
 
-/* Contact Section */
 .contactSection {
     font-family: "Inter";
     font-weight: 300;
     font-size: 10em;
     font-style: italic;
     color: rgba(245, 245, 245, 0.377);
-
     position: relative;
     top: 100px;
     margin: 0 auto;
@@ -859,15 +891,12 @@ body.light-mode .contactSection {
     font-family: "Inter";
     font-weight: 100;
     color: white;
-
     box-sizing: border-box;
     width: 1200px;
     padding: 40px;
     margin-bottom: 130px;
     display: flex;
     flex-direction: row;
-
-
     border-radius: 5px;
     border: 0.1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
@@ -903,10 +932,8 @@ body.light-mode .contactContainer {
     font-weight: 300;
     font-size: 1em;
     border-radius: 10px;
-
     width: 500px;
     height: 50px;
-
     border: none;
     outline: none;
     padding-left: 10px;
@@ -932,19 +959,15 @@ body.light-mode .contactInputs {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 140px;
     height: 50px;
     padding-left: 20px;
-
     background: linear-gradient(45deg, gold, orange);
     border: 1px solid rgba(255, 255, 255, 0.164);
     border-radius: 30px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-
     color: #ffffff;
     font: 400 20px "Inter";
-
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
 }
@@ -966,17 +989,14 @@ hr {
    height: 380px;
    margin-left: 70px;
    margin-right: 70px;
-
    align-self: center;
    background-color: #adadad;
 }
 
-/* Let's Connect Section */
 .connect-subtext {
     font-weight: 150;
     font-size: 1.2em;
     text-align: start;
-
     width: 480px;
     margin: 0;
 }
@@ -1004,7 +1024,6 @@ hr {
 }
 
 body.light-mode .socials-pic {
-
     justify-self: center;
 }
 
@@ -1096,7 +1115,6 @@ body.light-mode .airplane{
     right: 230px;
     top: 315px;
     z-index: -1;
-
     height: 250px;
 }
 
@@ -1104,10 +1122,375 @@ body.light-mode .airplane{
     height: 20px;
     padding: 30px 0;
     text-align: center;
-
     font-family: "Inter";
     font-size: 1rem;
     font-weight: 300;
     color: #a1a1a1;
 }
 
+@media (max-width: 768px) {
+    body.light-mode #subtextJunior {
+        font-size: 1.5em;
+        color: rgb(0, 0, 0);
+    }
+    
+    body.light-mode .phtext {
+        font-size: 1.5em;
+        color: rgb(0, 0, 0);
+    }
+
+    .linksContainer {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .heroContainer {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+        margin: 100px auto;
+        max-width: 90%;
+        width: auto;
+    }
+    
+    #mypic {
+        display: none;
+    }
+    
+    .heroText {
+        text-align: center;
+    }
+    
+    #heroTitle {
+        font-size: 5em;
+    }
+    
+    #subtextJunior {
+        font-size: 1.5em;
+    }
+    
+    .phtext {
+        font-size: 1.5em;
+    }
+    
+    .aboutSection {
+        font-size: 6em;
+        position: static;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .aboutContainer {
+        width: 90%;
+        max-width: 600px;
+        height: auto;
+        margin: 0 auto 50px auto;
+        padding: 30px 20px;
+    }
+    
+    .gridContainer {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "tech";
+    }
+    
+    .techstack {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .html, .css, .js, .twcss, .github {
+        width: 100px;
+        padding: 8px;
+        padding-top: 15px;
+    }
+    
+    .techlogos {
+        width: 60px;
+    }
+    
+    .projectsSection {
+        font-size: 6em;
+        position: static;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .projectsContainer {
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px 15px;
+    }
+    
+    .project, .project2 {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "name"
+            "pic"
+            "desc";
+        gap: 20px;
+        margin-bottom: 60px;
+    }
+    
+    .projectpic {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .projectdesc {
+        font-size: 1.2em;
+        padding: 0 10px;
+    }
+    
+    .contactSection {
+        font-size: 6em;
+        position: static;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .contactContainer {
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto 50px auto;
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    
+    .contactInputs {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .connect-subtext {
+        width: 100%;
+        text-align: center;
+    }
+    
+    hr {
+        height: 1px;
+        width: 100%;
+        margin: 20px 0;
+    }
+    
+    .airplane {
+        display: none;
+    }
+    
+    .footer {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .switch-hero {
+        display: none;
+    }
+
+    nav {
+        position: sticky;
+    }
+
+    body.light-mode nav {
+        position: sticky;
+    }
+
+    .switch-nav {
+        position: absolute;
+        display: inline-block;
+        width: 56px;
+        height: 30px;
+        vertical-align: middle;
+        cursor: pointer;
+
+        top: 16px;
+        left: 320px;
+        z-index: 2000;
+    }
+
+    .switch-nav input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    body.light-mode #subtextJunior {
+        font-size: 1.2em;
+        color: rgb(0, 0, 0);
+    }
+    
+    body.light-mode .phtext {
+        font-size: 1.2em;
+        color: rgb(0, 0, 0);
+    }
+
+    #brandName {
+        font-size: 1.2em;
+        left: 5px;
+    }
+    
+    .kdlogo {
+        height: 30px;
+        margin-left: 5px;
+    }
+    
+    #heroTitle {
+        font-size: 3.5em;
+    }
+
+    body.light-mode .heroContainer {
+        margin: 0;
+        margin-top: 110px;
+        margin-bottom: 110px;
+    }
+
+    .heroContainer {
+        margin: 0;
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+
+    body.light-mode #heroTitle {
+        font-size: 3.5em;
+    }
+
+    body.light-mode .heroSubtext {
+        align-self: center;
+    }
+    
+    .heroSubtext {
+        align-self: center;
+    }
+    
+    #subtextJunior {
+        font-size: 1.2em;
+    }
+    
+    .phtext {
+        font-size: 1.2em;
+    }
+    
+    .aboutSection {
+        font-size: 4em;
+        margin-bottom: 20px;
+    }
+
+    body.light-mode .aboutSection {
+        position: inherit;
+        font-size: 4em;
+        margin-bottom: 20px;
+    }
+
+    body.light-mode .aboutContainer {
+        height: 1400px;
+    }
+
+    .html, .css, .js, .twcss, .github {
+        width: 120px;
+        padding: 6px;
+        padding-top: 12px;
+    }
+
+    body.light-mode .html,
+    body.light-mode .css,
+    body.light-mode .js,
+    body.light-mode .twcss {
+        width: 120px;
+        padding: 6px;
+        padding-top: 12px;
+    }
+
+    body.light-mode .github {
+        height: 100px;
+        width: 130px;
+        padding: 6px;
+        padding-top: 12px;
+    }
+
+    body.light-mode #githublogo {
+        height: 45px;
+        width: 45px;
+        padding: 6px;
+        padding-top: 12px;
+    }
+
+    .aboutText {
+        align-content: center;
+    }
+    
+    .projectsSection {
+        font-size: 4em;
+        margin-bottom: 20px;
+    }
+
+    .project h1 {
+        margin-bottom: 20px;
+    }
+
+    body.light-mode .projectpic {
+        height: 180px;
+    }
+    
+    .contactSection {
+        font-size: 4em;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+    
+    .aboutContainer, .projectsContainer, .contactContainer {
+        padding: 20px 15px;
+    }
+
+    .aboutContainer {
+        height: 1350px;
+    }
+    
+    .contactInputs {
+        font-size: 0.9em;
+        height: 45px;
+    }
+    
+    .contactLeft textarea {
+        height: 150px;
+    }
+
+    #ghlogo, #lilogo, #gmlogo, #numlogo, #iglogo{
+        height: 40px;
+        width: auto;
+    }
+
+    body.light-mode #ghlogo,
+     body.light-mode #lilogo,
+     body.light-mode #gmlogo,
+     body.light-mode #numlogo,
+     body.light-mode #iglogo{
+        height: 40px;
+        width: auto;
+    }
+
+    .socials1, .socials2, .socials3, .socials4,.socials5 {
+        font-size: 1em;
+    }
+    
+    #sendbtn {
+        width: 120px;
+        height: 45px;
+        font-size: 18px;
+    }
+    
+    .techstack {
+        gap: 10px;
+    }
+    
+    .techlogos {
+        width: 40px;
+    }
+}
