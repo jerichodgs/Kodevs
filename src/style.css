@@ -343,11 +343,29 @@ body.light-mode .contactLink:hover {
     margin: 0;
 }
 
-#heroSubtext {
+#subtextJunior{
     font-weight: 300;
     font-size: 2em;
     color: white;
     margin: 0;
+}
+
+.heroSubtext {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#loclogo {
+    width: 30px;
+    height: 30px;
+    margin-right: -2px;
+}
+
+.phtext {
+    font-size: 2em;
+    margin-bottom: 6px;
+    margin-left: 0;
 }
 
 #heroCaption {
@@ -478,9 +496,9 @@ body.light-mode #imaginative {
 }
 
 .aboutContainer {
-    display: flex;
     
     box-sizing: border-box;
+    height: 920px;
     width: 1200px;
     margin: 50px;
     padding: 40px;
@@ -501,15 +519,15 @@ body.light-mode #imaginative {
     display: flex;
     flex-direction: column;
     grid-area: header;
+
+    justify-content: center;
 }
 
 .aboutText {
     display: flex;
     flex-direction: column;
-}
 
-.aboutText .sectiontitle{
-    margin-top: 0;
+    align-items: center;
 }
 
 body.light-mode .aboutSection {
@@ -550,21 +568,20 @@ body.light-mode .myname {
 }
 
 .location {
-    font-weight: 400;
+    color: rgb(126, 126, 126);
+    font-weight: 500;
     font-size: 1.2em;
 }
 
-.locationlogo {
+
+.aboutSubtext {
     display: flex;
     margin-top: 0;
     margin-bottom: 0px;
     align-items: center;
 }
 
-.loclogo {
-    width: 30px;
-    height: 30px;
-}
+
 
 body.light-mode .loclogo {
     width: 20px;
@@ -573,13 +590,22 @@ body.light-mode .loclogo {
     margin-right: 5px;
 }
 
+.jokosmall {
+    height: auto;
+    width: 200px;
+    margin-bottom: 20px;
+
+    border: 3px solid rgb(71, 71, 71);
+    border-radius: 1pc;
+
+}
+
 .downloadCV {
     font-family: "Inter";
     font-weight: 200;
     font-size: 0.3em;
 
     border-radius: 5px;
-    margin-left: 15px;
     position: relative;
     top: -10px;
     background-color: #0a0a0a;
@@ -605,7 +631,7 @@ body.light-mode .loclogo {
     margin-top: 30px;
     margin-bottom: 30px;
     font-family: "Inter";
-    font-size: 3em;
+    font-size: 2.4em;
     font-weight: 500;
     font-style: italic;
 }
@@ -698,6 +724,7 @@ body.light-mode .projectsSection {color: rgba(0, 0, 0, 0.377);}
 .projectsContainer {
     font-family: "Inter";
     font-weight: 200;
+    font-size: 0.8em;
     color: white;
 
     box-sizing: border-box;
@@ -874,7 +901,7 @@ body.light-mode .contactContainer {
 .contactInputs {
     font-family: Inter;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 1em;
     border-radius: 10px;
 
     width: 500px;
@@ -947,7 +974,7 @@ hr {
 /* Let's Connect Section */
 .connect-subtext {
     font-weight: 150;
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: start;
 
     width: 480px;
