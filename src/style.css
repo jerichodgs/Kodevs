@@ -37,6 +37,7 @@ nav {
     display: flex;
     justify-content: space-between;
     position: fixed;
+    flex-wrap: wrap;
 
     top: 0;
     left: 0;
@@ -213,6 +214,11 @@ body.light-mode #theme-toggle:hover {
     justify-items: center;
     float: right;
     position: relative;
+    flex-shrink: 1;
+
+    flex-wrap: wrap;
+    max-width: 100%;
+
     top: 8px;
     right: 30px;
 }
@@ -1128,19 +1134,15 @@ body.light-mode .airplane{
     color: #a1a1a1;
 }
 
-@media (max-width: 768px) {
-    body.light-mode #subtextJunior {
-        font-size: 1.5em;
-        color: rgb(0, 0, 0);
-    }
-    
-    body.light-mode .phtext {
-        font-size: 1.5em;
-        color: rgb(0, 0, 0);
+.switchContainer {
+        display: none;
     }
 
-    .linksContainer {
-        display: none;
+@media (max-width: 1024px) {
+
+    .phtext {
+        font-size: 1.5em;
+        color: rgb(255, 255, 255);
     }
     
     .hamburger {
@@ -1151,9 +1153,18 @@ body.light-mode .airplane{
         flex-direction: column;
         gap: 30px;
         padding: 30px 20px;
-        margin: 100px auto;
+        margin: 320px 0;
         max-width: 90%;
         width: auto;
+    }
+
+    .switch-hero {
+        right: -240px;
+        bottom: -80px;
+    }
+
+    #subtextJunior {
+        align-self: center;
     }
     
     #mypic {
@@ -1161,33 +1172,41 @@ body.light-mode .airplane{
     }
     
     .heroText {
+        gap: 1px;
         text-align: center;
     }
-    
-    #heroTitle {
-        font-size: 5em;
+
+    body.light-mode #heroTitle, #heroTitle {
+        text-align: center;
+        font-size: 8em;
+        margin: 0;
     }
-    
-    #subtextJunior {
-        font-size: 1.5em;
-    }
-    
-    .phtext {
-        font-size: 1.5em;
+
+    .heroSubtext {
+        font-size: 0.5em;
+        display: flex;
+        justify-content: center;
     }
     
     .aboutSection {
         font-size: 6em;
         position: static;
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
+    }
+
+    body.light-mode .aboutSection {
+        font-size: 6em;
+        position: static;
+        text-align: center;
+        margin-bottom: 20px;
     }
     
     .aboutContainer {
         width: 90%;
         max-width: 600px;
-        height: auto;
-        margin: 0 auto 50px auto;
+        height: 1100px;
+        margin: 0 auto 100px auto;
         padding: 30px 20px;
     }
     
@@ -1218,13 +1237,13 @@ body.light-mode .airplane{
         font-size: 6em;
         position: static;
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
     
     .projectsContainer {
         width: 90%;
         max-width: 600px;
-        margin: 0 auto;
+        margin-bottom: 100px;
         padding: 20px 15px;
     }
     
@@ -1252,7 +1271,7 @@ body.light-mode .airplane{
         font-size: 6em;
         position: static;
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
     
     .contactContainer {
@@ -1278,6 +1297,15 @@ body.light-mode .airplane{
         width: 100%;
         margin: 20px 0;
     }
+
+    .otherContacts {
+        margin-left: 10px;
+        font-size: 1em;
+    }
+
+    .connect-subtext {
+        text-align: left;
+    }
     
     .airplane {
         display: none;
@@ -1286,20 +1314,43 @@ body.light-mode .airplane{
     .footer {
         padding: 30px 20px;
     }
+
+    .switchContainer {
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    #heroTitle {
+        text-align: center;
+        font-size: 6em;
+        margin: 0;
+    }
 }
 
 @media (max-width: 480px) {
+    .linksContainer {
+        display: none;
+    }
 
     .switch-hero {
         display: none;
     }
 
     nav {
-        position: sticky;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2px;
     }
 
-    body.light-mode nav {
-        position: sticky;
+    .switchContainer {
+        display: flex;
+        justify-content: flex-start;
+        width: 70px;
+        height: 25px;
+        margin-bottom: 3px;
     }
 
     .switch-nav {
@@ -1309,17 +1360,14 @@ body.light-mode .airplane{
         height: 30px;
         vertical-align: middle;
         cursor: pointer;
-
-        top: 16px;
-        left: 320px;
+        flex-shrink: 0;
         z-index: 2000;
     }
 
     .switch-nav input {
         position: absolute;
-        opacity: 0;
-        width: 0;
-        height: 0;
+        width: 10px;
+        height: 10px;
     }
 
     body.light-mode #subtextJunior {
@@ -1343,23 +1391,17 @@ body.light-mode .airplane{
     }
     
     #heroTitle {
-        font-size: 3.5em;
+        font-size: 5em;
     }
-
-    body.light-mode .heroContainer {
-        margin: 0;
-        margin-top: 110px;
-        margin-bottom: 110px;
+    
+    body.light-mode #heroTitle {
+        font-size: 5em;
     }
 
     .heroContainer {
         margin: 0;
-        margin-top: 120px;
-        margin-bottom: 120px;
-    }
-
-    body.light-mode #heroTitle {
-        font-size: 3.5em;
+        margin-top: 250px;
+        margin-bottom: 250px;
     }
 
     body.light-mode .heroSubtext {
@@ -1369,13 +1411,21 @@ body.light-mode .airplane{
     .heroSubtext {
         align-self: center;
     }
-    
-    #subtextJunior {
-        font-size: 1.2em;
+
+    #heroCaption {
+        margin: 10px;
+    }
+
+    body.light-mode #heroCaption {
+        margin: 10px;
     }
     
-    .phtext {
-        font-size: 1.2em;
+    body.light-mode #subtextJunior, #subtextJunior{
+        font-size: 2em;
+    }
+    
+    body.light-mode .phtext, .phtext {
+        font-size: 2em;
     }
     
     .aboutSection {
@@ -1387,10 +1437,6 @@ body.light-mode .airplane{
         position: inherit;
         font-size: 4em;
         margin-bottom: 20px;
-    }
-
-    body.light-mode .aboutContainer {
-        height: 1400px;
     }
 
     .html, .css, .js, .twcss, .github {
@@ -1492,5 +1538,63 @@ body.light-mode .airplane{
     
     .techlogos {
         width: 40px;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 15px;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 3px 0;
+        transition: 0.3s;
+    }
+
+    body.light-mode .hamburger span {
+        background-color: #000;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 62px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(12, 11, 10, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    body.light-mode .mobile-menu {
+        background-color: rgba(245, 245, 245, 0.95);
+    }
+
+    .mobile-menu.active {
+        display: block;
+    }
+
+    .mobile-menu .link {
+        display: block;
+        text-align: center;
+        margin: 15px 0;
+        font-size: 1.2em;
     }
 }
