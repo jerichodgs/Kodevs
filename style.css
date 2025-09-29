@@ -28,7 +28,7 @@ body.light-mode {
 }
 
 body.light-mode {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     background-image: radial-gradient(#adadad 1px, transparent 1px);
     color: #000000;
 }
@@ -441,14 +441,70 @@ body.light-mode .mobile-menu {
 }
 
 #imaginative {
-    font-weight: 500;
-    color: gold;
+    font-weight: 800;
+    color: #2a2a2a;
 }
 
 .glow {
-  color: gold;
-  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px orange;
-}
+            position: relative;
+            background: linear-gradient(
+                90deg,
+                #704214 0%,
+                #8b6914 15%,
+                #b8860b 30%,
+                #daa520 45%,
+                #ffd700 50%,
+                #daa520 55%,
+                #b8860b 70%,
+                #8b6914 85%,
+                #704214 100%
+            );
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 2s linear infinite;
+            font-weight: 800;
+            filter: drop-shadow(0 2px 4px rgba(112, 66, 20, 0.5)) 
+                    drop-shadow(0 0 1px rgba(0, 0, 0, 0.8));
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 0%;
+            }
+        }
+
+        /* Extra glow effect */
+        .glow::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            background: linear-gradient(
+                90deg,
+                #8b6914 0%,
+                #b8860b 15%,
+                #daa520 30%,
+                #ffd700 45%,
+                #ffed4e 50%,
+                #ffd700 55%,
+                #daa520 70%,
+                #b8860b 85%,
+                #8b6914 100%
+            );
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: blur(10px);
+            opacity: 0.5;
+            animation: shimmer 2s linear infinite;
+        }
 
 #mypic {
     height: 500px;
@@ -520,10 +576,30 @@ body.light-mode #heroCaption {
     color: #000000;
 }
 
-body.light-mode #imaginative {
+#imaginative {
     font-weight: 700;
     color: gold;
-    text-shadow: 0 0 1px rgba(19, 19, 19, 0.699), 0 0 3px rgba(54, 53, 53, 0.712);
+    background: linear-gradient(
+        90deg,
+        gold 0%,
+        #fff59d 50%,
+        gold 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;        /* Standard */
+    -webkit-background-clip: text; /* For Chrome, Safari */
+    color: transparent;            /* Standard way */
+    -webkit-text-fill-color: transparent; /* For WebKit browsers */
+    animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
 }
 
 .gridContainer {
@@ -1162,8 +1238,8 @@ body.light-mode .airplane{
     }
 
     .switch-hero {
-        right: -240px;
-        bottom: -80px;
+        left: 240px;
+        top: 70px;
     }
 
     #subtextJunior {
