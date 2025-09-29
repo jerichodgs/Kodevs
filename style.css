@@ -298,6 +298,10 @@ body.light-mode .contactLink:hover {
     background-color: gold;
 }
 
+textarea { 
+    resize: none;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
