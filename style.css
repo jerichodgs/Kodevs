@@ -1112,6 +1112,7 @@ body.light-mode .airplane{
 .socials4 {
     font-size: 20px;
     grid-area: numacc;
+    text-decoration: none;
 }
 .socials5 {
     font-size: 20px;
@@ -1368,8 +1369,9 @@ body.light-mode .airplane{
 
     .switch-nav input {
         position: absolute;
-        width: 10px;
-        height: 10px;
+        opacity: 0;
+        width: 0;
+        height: 0;
     }
 
     body.light-mode #subtextJunior {
@@ -1486,6 +1488,10 @@ body.light-mode .airplane{
     body.light-mode .projectpic {
         height: 180px;
     }
+
+    .projectpic {
+        height: 180px;
+    }
     
     .contactSection {
         font-size: 4em;
@@ -1516,10 +1522,10 @@ body.light-mode .airplane{
     }
 
     body.light-mode #ghlogo,
-     body.light-mode #lilogo,
-     body.light-mode #gmlogo,
-     body.light-mode #numlogo,
-     body.light-mode #iglogo{
+    body.light-mode #lilogo,
+    body.light-mode #gmlogo,
+    body.light-mode #numlogo,
+    body.light-mode #iglogo{
         height: 40px;
         width: auto;
     }
