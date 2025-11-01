@@ -39,6 +39,23 @@ body.light-mode {
     color: #000000;
 }
 
+body::-webkit-scrollbar {
+  width: 2px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 2px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #ccc;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
