@@ -167,6 +167,27 @@ body.light-mode #brandName:hover{
     display: none;
 }
 
+.mobile-menu-toggle {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.switch-mobile-menu {
+    display: inline-block;
+    width: 56px;
+    height: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.switch-mobile-menu input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
 .switch-hero {
   position: absolute;
   display: inline-block;
@@ -1283,19 +1304,40 @@ body.light-mode .airplane{
     color: #a1a1a1;
 }
 
+.hamburger {
+    display: none;
+}
+
 .switchContainer {
         display: none;
     }
 
+@media (max-width: 900px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .linksContainer {
+        display: none;
+    }
+
+    .switch-hero {
+        display: none;
+    }
+}
+
 @media (max-width: 1024px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .linksContainer {
+        display: none;
+    }
 
     .phtext {
         font-size: 1.5em;
         color: rgb(255, 255, 255);
-    }
-    
-    .hamburger {
-        display: flex;
     }
     
     .heroContainer {
@@ -1308,8 +1350,7 @@ body.light-mode .airplane{
     }
 
     .switch-hero {
-        right: 120px;
-        top: 20px;
+        display: none;
     }
 
     #subtextJunior {
@@ -1471,6 +1512,7 @@ body.light-mode .airplane{
 }
 
 @media (max-width: 768px){
+
     #heroTitle {
         text-align: center;
         font-size: 6em;
@@ -1492,33 +1534,21 @@ body.light-mode .airplane{
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: 0 2px;
+        padding: 0 10px;
     }
 
     .switchContainer {
+        display: none;
+    }
+
+    .hamburger {
         display: flex;
-        justify-content: flex-start;
-        width: 70px;
-        height: 25px;
-        margin-bottom: 3px;
+        margin-left: auto;
+        order: 3;
     }
 
-    .switch-nav {
-        position: absolute;
-        display: inline-block;
-        width: 56px;
-        height: 30px;
-        vertical-align: middle;
-        cursor: pointer;
-        flex-shrink: 0;
-        z-index: 2000;
-    }
-
-    .switch-nav input {
-        position: absolute;
-        opacity: 0;
-        width: 0;
-        height: 0;
+    .brandContainer {
+        order: 1;
     }
 
     body.light-mode #subtextJunior {
