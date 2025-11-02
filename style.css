@@ -1324,6 +1324,10 @@ body.light-mode .airplane{
     .switch-hero {
         display: none;
     }
+
+    .mobile-menu {
+        display: none;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -1509,6 +1513,29 @@ body.light-mode .airplane{
     .switchContainer {
         display: none;
     }
+
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 62px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(12, 11, 10, 0);
+        backdrop-filter: blur(10px);
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    body.light-mode .mobile-menu {
+        background-color: rgba(245, 245, 245, 0);
+    }
+
+    body.light-mode .mobile-menu .link {
+        display: block;
+        text-align: center;
+        margin: 15px 0;
+        font-size: 1.2em;
+    }
 }
 
 @media (max-width: 768px){
@@ -1518,6 +1545,23 @@ body.light-mode .airplane{
         font-size: 6em;
         margin: 0;
     }
+
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 62px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(12, 11, 10, 0);
+        backdrop-filter: blur(10px);
+        padding: 20px 0;
+        z-index: 999;
+    }
+
+    body.light-mode .mobile-menu {
+        background-color: rgba(245, 245, 245, 0);
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -1727,58 +1771,33 @@ body.light-mode .airplane{
         width: 40px;
     }
 
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        padding: 15px;
-    }
-
-    .hamburger span {
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 3px 0;
-        transition: 0.3s;
-    }
-
-    body.light-mode .hamburger span {
-        background-color: #000;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-
     .mobile-menu {
-        display: none;
         position: fixed;
         top: 62px;
         left: 0;
         width: 100%;
-        background-color: rgba(12, 11, 10, 0.95);
+        background-color: rgba(12, 11, 10, 0);
         backdrop-filter: blur(10px);
         padding: 20px 0;
         z-index: 999;
     }
 
     body.light-mode .mobile-menu {
-        background-color: rgba(245, 245, 245, 0.95);
+        background-color: rgba(245, 245, 245, 0);
     }
 
     .mobile-menu.active {
         display: block;
-    }
+    } 
 
     .mobile-menu .link {
+        display: block;
+        text-align: center;
+        margin: 15px 0;
+        font-size: 1.2em;
+    }
+
+    body.light-mode .mobile-menu .link {
         display: block;
         text-align: center;
         margin: 15px 0;
