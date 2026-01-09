@@ -107,7 +107,7 @@ body.light-mode nav {
     z-index: 1000;
 
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.13);
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(1px);
 }
@@ -170,7 +170,6 @@ body.light-mode #brandName:hover{
 .mobile-menu-toggle {
     display: flex;
     justify-content: center;
-    padding: 20px 0;
 }
 
 .switch-mobile-menu {
@@ -413,8 +412,8 @@ body.light-mode .hamburger span {
     width: 100%;
     background-color: rgba(12, 11, 10, 0.95);
     backdrop-filter: blur(10px);
-    padding: 20px 0;
     z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.171); 
 }
 
 body.light-mode .mobile-menu {
@@ -428,8 +427,9 @@ body.light-mode .mobile-menu {
 .mobile-menu .link {
     display: block;
     text-align: center;
-    margin: 15px 0;
     font-size: 1.2em;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.068); 
 }
 
 .heroContainer {
@@ -474,19 +474,19 @@ body.light-mode .mobile-menu {
 .heroText {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1px;
 }
 
 #heroTitle {
     font-size: 6em;
-    font-weight:250;
+    font-weight:600;
     color: white;
     font-style: italic;
     margin: 0;
 }
 
 #subtextJunior{
-    font-weight: 300;
+    font-weight: 400;
     font-size: 2em;
     color: white;
     margin: 0;
@@ -511,7 +511,7 @@ body.light-mode .mobile-menu {
 }
 
 #heroCaption {
-    font-weight: 200;
+    font-weight: 300;
     font-size: 1em;
     color: #f5f5f5;
 }
@@ -618,37 +618,19 @@ body.light-mode .heroContainer::before {
     z-index: -1;
 }
 
-body.light-mode .heroText {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-}
-
 body.light-mode #heroTitle {
-    font-size: 6em;
-    font-weight: 250;
     color: rgb(0, 0, 0);
-    font-style: italic;
-    margin: 0;
 }
 
 body.light-mode #subtextJunior{
-    font-weight: 300;
-    font-size: 2em;
     color: rgb(0, 0, 0);
-    margin: 0;
 }
 
 body.light-mode .phtext {
-    font-size: 2em;
-    margin-bottom: 6px;
-    margin-left: 0;
     color: rgb(0, 0, 0);
 }
 
 body.light-mode #heroCaption {
-    font-weight: 200;
-    font-size: 1em;
     color: #000000;
 }
 
@@ -719,7 +701,7 @@ body.light-mode #heroCaption {
     padding: 40px;
     border-radius: 5px;
     border: 0.1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgb(0, 0, 0);
     background-color: rgba(32, 32, 32, 0.5);
     backdrop-filter: blur(1.2px);
     -webkit-backdrop-filter: blur(8px);
@@ -759,7 +741,7 @@ body.light-mode .aboutContainer {
     background-color: rgba(255, 255, 255, 0.5);
     font-weight: 200;
     border: 0.1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.329);
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(1px);
 }
@@ -803,8 +785,8 @@ body.light-mode .loclogo {
     height: auto;
     width: 200px;
     margin-bottom: 20px;
-    border: 3px solid rgb(71, 71, 71);
     border-radius: 1pc;
+    box-shadow: 0 4px 40px rgb(0, 0, 0);;
 }
 
 .downloadCV {
@@ -854,7 +836,7 @@ body.light-mode .loclogo {
     margin: 0;
 }
 
-.html, .css, .js, .twcss, .github {
+.html, .css, .js, .github {
     justify-items: center;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.199);
@@ -863,19 +845,40 @@ body.light-mode .loclogo {
     padding: 10px;
     padding-top: 20px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.062);
+    box-shadow: 0 4px 30px rgb(0, 0, 0);
 }
 
-.html:hover, .css:hover, .js:hover, .twcss:hover, .github:hover {
+.html:hover, body.light-mode .html:hover{
     transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+    box-shadow: 0 4px 25px rgb(255, 83, 16);
     cursor: pointer;
+}
+
+.css:hover, body.light-mode .css:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 30px rgb(18, 101, 255);
+    cursor: pointer;
+}
+
+.js:hover, body.light-mode .js:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 30px rgb(251, 255, 8);
+    cursor: pointer;
+}
+
+.github:hover, body.light-mode .github:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 30px rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+body.light-mode .github:hover {
+    box-shadow: 0 4px 30px rgb(0, 0, 0);
 }
 
 body.light-mode .html,
 body.light-mode .css,
 body.light-mode .js,
-body.light-mode .twcss,
 body.light-mode .github {
     border: 1px solid rgba(0, 0, 0, 0.199);
     border-radius: 10px;
@@ -883,17 +886,7 @@ body.light-mode .github {
     padding: 10px;
     padding-top: 20px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.13);
-}
-
-body.light-mode .html:hover,
-body.light-mode .css:hover,
-body.light-mode .js:hover,
-body.light-mode .twcss:hover,
-body.light-mode .github:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.418);
 }
 
 body.light-mode .techstack {
@@ -938,8 +931,8 @@ body.light-mode .projectsSection {
     margin-right: auto;
     border-radius: 5px;
     border: 0.1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
-    background-color: rgba(32, 32, 32, 0.5);
+    box-shadow: 0 4px 30px rgb(0, 0, 0);
+    background-color: rgba(32, 32, 32, 0.301);
     backdrop-filter: blur(1.2px);
     -webkit-backdrop-filter: blur(8px);
 }
@@ -949,7 +942,7 @@ body.light-mode .projectsContainer {
     background-color: rgba(255, 255, 255, 0.5);
     font-weight: 200;
     border: 0.1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.336);
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(1px);
 }
@@ -1002,7 +995,17 @@ body.light-mode .projectsContainer {
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.267);
+    box-shadow: 0 4px 30px rgb(0, 0, 0);
+}
+
+.projecttech {
+    color: darkgrey; 
+    font-style: italic;
+    font-weight: 300;
+}
+
+body.light-mode .projecttech {
+    color: rgba(0, 0, 0, 0.616); 
 }
 
 body.light-mode .projectpic {
@@ -1014,23 +1017,23 @@ body.light-mode .projectpic {
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.11);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.493);
 }
 
 #projectpic1:hover{
     transform: scale(1.04);
-    box-shadow: 0 5px 55px rgba(255, 30, 0, 0.925);
+    box-shadow: 0 5px 25px rgba(255, 30, 0, 0.925);
     cursor: pointer;
 }
 
 #projectpic2:hover{
     transform: scale(1.04);
-    box-shadow: 0 5px 55px gold;
+    box-shadow: 0 5px 25px rgb(255, 208, 0);
 }
 
 #projectpic3:hover{
     transform: scale(1.04);
-    box-shadow: 0 5px 55px gold;
+    box-shadow: 0 5px 25px rgb(255, 208, 0);
 }
 
 .projectdesc {
@@ -1069,12 +1072,12 @@ body.light-mode .contactSection {
     box-sizing: border-box;
     width: 1200px;
     padding: 40px;
-    margin: 0 auto 130px auto;
+    margin: 0 auto 100px auto;
     display: flex;
     flex-direction: row;
     border-radius: 5px;
     border: 0.1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgb(5, 5, 5);
     background-color: rgba(32, 32, 32, 0.5);
     backdrop-filter: blur(1.2px);
     -webkit-backdrop-filter: blur(8px);
@@ -1085,7 +1088,7 @@ body.light-mode .contactContainer {
     background-color: rgba(255, 255, 255, 0.5);
     font-weight: 200;
     border: 0.1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.336);
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(1px);
 }
@@ -1140,7 +1143,7 @@ body.light-mode .contactInputs {
     background: linear-gradient(45deg, gold, orange);
     border: 1px solid rgba(255, 255, 255, 0.164);
     border-radius: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgb(0, 0, 0);
     color: #ffffff;
     font: 400 20px "Inter";
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -1153,7 +1156,7 @@ body.light-mode .contactInputs {
 
 #sendbtn:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+    box-shadow: 0 4px 15px rgba(255, 166, 0, 0.411);
 }
 
 body.light-mode #sendbtn:hover {
@@ -1296,7 +1299,9 @@ body.light-mode .airplane{
 
 .footer {
     height: 20px;
-    padding: 30px 0;
+    margin-top: -50px;
+    margin-bottom: 10px;
+    padding: 20px 0;
     text-align: center;
     font-family: "Inter";
     font-size: 1rem;
@@ -1412,14 +1417,16 @@ body.light-mode .airplane{
     }
     
     .techstack {
+        display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        gap: 20px;
+        justify-content: space-evenly;
     }
     
     .html, .css, .js, .twcss, .github {
-        width: 100px;
-        padding: 8px;
+        width: 120px;
+        padding: 10px;
         padding-top: 15px;
     }
     
@@ -1522,9 +1529,25 @@ body.light-mode .airplane{
         width: 100%;
         background-color: rgba(12, 11, 10, 0);
         backdrop-filter: blur(10px);
-        padding: 20px 0;
+        padding-bottom: 12px;
+        padding-top: 4px;
         z-index: 999;
     }
+
+    .mobile-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    box-shadow: 0 4px 30px rgb(0, 0, 0);
+}
+
+    body.light-mode .mobile-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.13);
+}
 
     body.light-mode .mobile-menu {
         background-color: rgba(245, 245, 245, 0);
@@ -1533,8 +1556,8 @@ body.light-mode .airplane{
     body.light-mode .mobile-menu .link {
         display: block;
         text-align: center;
-        margin: 15px 0;
         font-size: 1.2em;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.055);
     }
 }
 
@@ -1554,7 +1577,6 @@ body.light-mode .airplane{
         width: 100%;
         background-color: rgba(12, 11, 10, 0);
         backdrop-filter: blur(10px);
-        padding: 20px 0;
         z-index: 999;
     }
 
@@ -1664,8 +1686,8 @@ body.light-mode .airplane{
         margin-bottom: 20px;
     }
 
-    .html, .css, .js, .twcss, .github {
-        width: 120px;
+    .html, .css, .js, .github {
+        width: 100px;
         padding: 6px;
         padding-top: 12px;
     }
@@ -1674,23 +1696,23 @@ body.light-mode .airplane{
     body.light-mode .css,
     body.light-mode .js,
     body.light-mode .twcss {
-        width: 120px;
+        width: 100px;
         padding: 6px;
         padding-top: 12px;
     }
 
     body.light-mode .github {
         height: 100px;
-        width: 130px;
+        width: 100px;
         padding: 6px;
         padding-top: 12px;
+        justify-content: center;
+        align-items: center;
     }
 
     body.light-mode #githublogo {
         height: 45px;
         width: 45px;
-        padding: 6px;
-        padding-top: 12px;
     }
 
     .aboutText {
@@ -1764,7 +1786,8 @@ body.light-mode .airplane{
     }
     
     .techstack {
-        gap: 10px;
+        gap: 20px;
+        justify-content: center;
     }
     
     .techlogos {
@@ -1778,7 +1801,6 @@ body.light-mode .airplane{
         width: 100%;
         background-color: rgba(12, 11, 10, 0);
         backdrop-filter: blur(10px);
-        padding: 20px 0;
         z-index: 999;
     }
 
@@ -1793,14 +1815,6 @@ body.light-mode .airplane{
     .mobile-menu .link {
         display: block;
         text-align: center;
-        margin: 15px 0;
-        font-size: 1.2em;
-    }
-
-    body.light-mode .mobile-menu .link {
-        display: block;
-        text-align: center;
-        margin: 15px 0;
         font-size: 1.2em;
     }
 }
