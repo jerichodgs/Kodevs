@@ -786,7 +786,7 @@ body.light-mode .loclogo {
     width: 200px;
     margin-bottom: 20px;
     border-radius: 1pc;
-    box-shadow: 0 4px 40px rgb(0, 0, 0);;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.541);;
 }
 
 .downloadCV {
@@ -886,7 +886,7 @@ body.light-mode .github {
     padding: 10px;
     padding-top: 20px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.418);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.247);
 }
 
 body.light-mode .techstack {
