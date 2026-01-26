@@ -940,9 +940,11 @@ body.light-mode .projectsContainer {
     grid-template-areas: 
     "name name"
     "pic desc"
+    "tech desc"
     ;
     margin-bottom: 100px;
     margin-top: 10px;
+    align-items: center;
     justify-items: center;
 }
 
@@ -952,8 +954,10 @@ body.light-mode .projectsContainer {
     grid-template-areas: 
     "name name"
     "desc pic"
+    "desc tech"
     ;
     margin-bottom: 100px;
+    align-items: center;
     justify-items: center;
 }
 
@@ -973,6 +977,18 @@ body.light-mode .projectsContainer {
     margin-bottom: 50px;
 }
 
+.projectname2 {
+    grid-area: name;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.projectname2 span {
+    color: darkgrey; 
+    font-weight: 300;
+}
+
 .projectpic {
     grid-area: pic;
     width: 500px;          
@@ -989,6 +1005,7 @@ body.light-mode .projectsContainer {
     color: darkgrey; 
     font-style: italic;
     font-weight: 300;
+    grid-area: tech;
 }
 
 body.light-mode .projecttech {
@@ -1015,7 +1032,7 @@ body.light-mode .projectpic {
 
 #projectpic2:hover{
     transform: scale(1.04);
-    box-shadow: 0 5px 25px rgb(255, 208, 0);
+    box-shadow: 0 5px 25px rgb(129, 173, 255);
 }
 
 #projectpic3:hover{
@@ -1027,7 +1044,11 @@ body.light-mode .projectpic {
     grid-area: desc;
     align-self: center;
     font-size: 1.6em;
-    text-align: center;
+    text-align: justify; 
+    max-width: 550px;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
 }
 
 .contactSection {
