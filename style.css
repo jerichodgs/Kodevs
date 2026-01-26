@@ -192,7 +192,7 @@ body.light-mode #brandName:hover{
     height: 22.5px;
     cursor: pointer;
     align-self: center;
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 .switch input {
@@ -425,7 +425,7 @@ body.light-mode .hamburger.active span {
     align-items: center;
     font-family: "Inter";
 
-    gap: 80px;
+    gap: 200px;
     margin: 185px auto 100px auto;
     justify-self: center;
     width: max-content;
@@ -1612,9 +1612,13 @@ body.light-mode .mobile-menu .link:hover{
         padding: 0 10px;
     }
 
+    .switch {
+        margin-left: 10px;
+    }
+
     .hamburger {
         display: flex;
-        margin-left: auto;
+        margin-right: 20px;
         order: 3;
     }
 
@@ -1652,7 +1656,7 @@ body.light-mode .mobile-menu .link:hover{
 
     .heroContainer {
         margin: 0;
-        margin-top: 250px;
+        margin-top: 200px;
         margin-bottom: 250px;
     }
 
