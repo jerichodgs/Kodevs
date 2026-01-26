@@ -1,221 +1,244 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Trade+Winds&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/png" href="kdlogo-outlined.png">
+    <link rel="icon" type="image/png" href="./src/images/kdlogo-outlined.png">
     <title>KoDevs</title>
 </head>
 <body>
 
-    <nav>
-        <div class ="brandContainer">
-            <a href="#home-point" id="brandName">KoDevs/></a>
-        </div>
-
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <div class ="linksContainer">
-            <a class="link" href="#home-point">Home</a>
-            <a class="link" href="#about-point">About</a>
-            <a class="link" href="#projects">Projects</a>
-            <a class="contactLink" href="#contact">
-                <img id="emailLogo" src="email2.svg">
-            </a>
-        </div>
-
-        <div class = "switchContainer">
-            <label class="switch-nav">
-            <input type="checkbox" id="theme-toggle-mobile" aria-label="Toggle theme">
-                <span class="slider">
-                    <span class="icon sun">☀︎</span>
-                    <span class="icon moon">☾</span>
-                </span>
-            </label>
-        </div>
-    </nav>
-
-    <div class="mobile-menu" id="mobile-menu">
-    <a class="link" href="#home-point">Home</a>
-    <a class="link" href="#about-point">About</a>
-    <a class="link" href="#projects">Projects</a>
-    <a class="link" href="#contact">Contact</a>
-
-        <div class="mobile-menu-toggle">
-            <label class="switch-mobile-menu">
-                <input type="checkbox" id="theme-toggle-mobile-menu" aria-label="Toggle theme">
-                <span class="slider">
-                    <span class="icon sun">☀︎</span>
-                    <span class="icon moon">☾</span>
-                </span>
-            </label>
-        </div>
-    </div>
-
-    <div class = "heroContainer" id="home-point">
-        
-        <label class="switch-hero">
+<nav>
+    <div class="brandContainer">
+        <a href="#home-point" id="brandName">KoDevs/></a>
+        <label class="switch">
             <input type="checkbox" id="theme-toggle-desktop" aria-label="Toggle theme">
             <span class="slider">
                 <span class="icon sun">☀︎</span>
                 <span class="icon moon">☾</span>
             </span>
         </label>
-
-        <div class = "heroText">
-            <h1 id = "heroTitle">Jericho Sineneng</h1>
-            <div class="heroSubtext">
-                <h2 id = "subtextJunior">Junior Developer from</h2>
-                <img id="loclogo" src="loc.png"><span class="phtext">🇵🇭</span></img>
-            </div>
-
-            <p id = "heroCaption">Allow me to transform your <span class = "glow" id = "imaginative">imaginative</span> designs into fully 
-                functional websites.</p>
-        </div>
-        <img id = "mypic" src = "joko professional pic.png">
     </div>
 
-    <div class = "flexContainer" id="about-point">
-        <h1 class = "aboutSection">About</h1>
-        <div class = "aboutContainer" id="about">
-            <div class = "gridContainer">
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-                <div class = "aboutTextContainer">
-                    <div class = "aboutText">
-                        <p class="sectiontitle" style="font-size: 3em;">Who is KoDevs?</p>
-                        <img src="joko-selfie.png" class="jokosmall">
-                        <h1 class="myname">Jose Jericho D.G. Sineneng V</h1>
-            
-                            <div class="aboutSubtext">
-                                <p class="location">Beginner Developer | Exploring Frontend & Backend</p>
-                            </div>
-                            <p class="aboutme">I am a Computer Engineering student at La Consolacion University Philippines, specializing in web development. With a solid foundation in <strong>HTML, CSS, and JavaScript</strong>, I am expanding my skills in React, Tailwind, and Node.js to build functional, real-world websites. I have deep passion for learning and creating solutions that are both practical and impactful.</p>
+    <div class="linksContainer">
+        <a class="link" href="#home-point">Home</a>
+        <a class="link" href="#about-point">About</a>
+        <a class="link" href="#projects">Projects</a>
+        <a class="contactLink" href="#contact">
+            <img id="emailLogo" src="./src/images/email2.svg" alt="Email">
+        </a>
+    </div>
+
+    <div class="switch-hb-container">
+        <label class="switch-nav">
+            <input type="checkbox" id="theme-toggle-mobile" aria-label="Toggle theme">
+            <span class="slider">
+                <span class="icon sun">☀︎</span>
+                <span class="icon moon">☾</span>
+            </span>
+        </label>
+    </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+    <div class="menu-header">
+        <div class="hamburger inner-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <a class="link" id="home-link" href="#home-point">Home</a>
+    <a class="link" href="#about-point">About</a>
+    <a class="link" href="#projects">Projects</a>
+    <a class="link" href="#contact">Contact</a>
+</div>
+
+<div class="menu-overlay"></div>
+
+<div class="heroContainer" id="home-point">
+
+    <div class="heroText">
+        <h1 id="heroTitle">Jericho Sineneng</h1>
+        <div class="heroSubtext">
+            <h2 id="subtextJunior">Junior Developer from</h2>
+            <img id="loclogo" src="./src/images/loc.png" alt="Location">
+            <span class="phtext">🇵🇭</span>
+        </div>
+
+        <p id="heroCaption">
+            Allow me to transform your 
+            <span class="glow" id="imaginative">imaginative</span> designs 
+            into fully functional websites.
+        </p>
+    </div>
+
+    <!-- exact filename includes spaces -->
+    <img id="mypic" src="./src/images/joko professional pic.png" alt="Jericho Photo">
+</div>
+
+<div class="flexContainer" id="about-point">
+    <h1 class="aboutSection">About</h1>
+    <div class="aboutContainer" id="about">
+        <div class="gridContainer">
+
+            <div class="aboutTextContainer">
+                <div class="aboutText">
+                    <p class="sectiontitle" style="font-size: 3em;">Who is KoDevs?</p>
+                    <img src="./src/images/jokooffice.png" class="jokosmall" alt="Jericho Small">
+                    <h1 class="myname">Jose Jericho D.G. Sineneng V</h1>
+
+                    <div class="aboutSubtext">
+                        <p class="location">Beginner Developer | Exploring Frontend & Backend</p>
                     </div>
+
+                    <p class="aboutme">
+                        I am a Computer Engineering student at La Consolacion University Philippines,
+                        specializing in web development. With a solid foundation in 
+                        <strong>HTML, CSS, and JavaScript</strong>, I am expanding my skills in React,
+                        Tailwind, and Node.js to build functional, real-world websites.
+                    </p>
                 </div>
+            </div>
 
-                <div class = "techStackContainer">
-                    <p class="sectiontitle">Technologies &lt;/&gt; </p>
-                    <div class="techstack">
-                        <div class="html">
-                            <img class = "techlogos" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" />
-                            <p>HTML5</p>
-                        </div>
-                        
-                        <div class="css">
-                            <img class = "techlogos" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" />
-                            <p>CSS3</p>
-                        </div>
+            <div class="techStackContainer">
+                <p class="sectiontitle">Technologies &lt;/&gt;</p>
+                <div class="techstack">
 
-                        <div class="js">
-                            <img class = "techlogos" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" />
-                            <p>JS</p>
-                        </div>
-
-                        <div class="github">
-                            <img class="techlogos" id="githublogo" src="githublight.png">
-                            <p>GITHUB</p>
-                        </div>
+                    <div class="html">
+                        <img class="techlogos" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" alt="HTML">
+                        <p>HTML5</p>
                     </div>
-                </div>
 
+                    <div class="css">
+                        <img class="techlogos" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" alt="CSS">
+                        <p>CSS3</p>
+                    </div>
+
+                    <div class="js">
+                        <img class="techlogos" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" alt="JS">
+                        <p>JS</p>
+                    </div>
+
+                    <div class="github">
+                        <img class="techlogos" id="githublogo" src="./src/images/githublight.png" alt="GitHub">
+                        <p>GITHUB</p>
+                    </div>
+
+                </div>
             </div>
+
         </div>
     </div>
+</div>
 
-    <div class="flexContainer" >
-        <h1 class = "projectsSection" id="projects">Projects</h1>
-        <div class="projectsContainer">
-            <div class="project">
-                <h1 class="projectname1">Xiao Long & Ramen Express</h1>
-                <img class = "projectpic" id="projectpic1" src="xlrev2.png">
-                <p class = "projectdesc">My first ever try on a landing page,
-                    had some fun with this one trying out my skills.
-                    Just suddenly thought of making a website for this restaurant because it is one of my
-                    favorite spots here in Malolos!
-                </p>
-                <p class="projecttech">Technologies used: HTML CSS JS</p>
-            </div>
+<div class="flexContainer">
+    <h1 class="projectsSection" id="projects">Projects</h1>
+    <div class="projectsContainer">
 
-            <div class="project2">
-                <h1 class="projectname">UNDER CONSTRUCTION!</h1>
-                <p class = "projectdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                </p>
-                <img class = "projectpic" id="projectpic2" src="underconstruction.jpg">
-            </div>
+        <div class="project">
+            <h1 class="projectname1">Xiao Long & Ramen Express</h1>
+            <img class="projectpic" id="projectpic1" src="./src/images/xlrev2.png" alt="Project 1">
+            <p class="projectdesc">
+                My first ever try on a landing page, had some fun with this one trying out my skills.
+                Just suddenly thought of making a website for this restaurant because it is one of my
+                favorite spots here in Malolos!
+            </p>
+            <p class="projecttech">Technologies used: HTML CSS JS</p>
+        </div>
 
-            <div class="project">
-                <h1 class="projectname">UNDER CONSTRUCTION!</h1>
-                <img class = "projectpic" id="projectpic3" src="underconstruction.jpg">
-                <p class = "projectdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                </p>
+        <div class="project2">
+            <h1 class="projectname">UNDER CONSTRUCTION!</h1>
+            <p class="projectdesc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            </p>
+            <!-- exact file: underconstruction.jpg -->
+            <img class="projectpic" id="projectpic2" src="./src/images/underconstruction.jpg" alt="Under Construction">
+        </div>
+
+        <div class="project">
+            <h1 class="projectname">UNDER CONSTRUCTION!</h1>
+            <img class="projectpic" id="projectpic3" src="./src/images/underconstruction.jpg" alt="Under Construction">
+            <p class="projectdesc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<div class="flexContainer" id="contact">
+    <h1 class="contactSection">Let's Talk!</h1>
+
+    <div class="contactContainer">
+
+        <div class="emailContainer">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contactLeft">
+
+                <div class="contactLeftTitle">
+                    <h1 class="sectiontitle" id="contactTitle">Send an Email</h1>
+                </div>
+
+                <input type="hidden" name="access_key" value="c3bf4445-bfde-4fba-8d67-20d588f7bb01">
+                <input type="text" name="name" class="contactInputs" placeholder="Your Name" required>
+                <input type="email" name="email" class="contactInputs" placeholder="Your Email" required>
+                <textarea name="message" class="contactInputs" placeholder="Your Message" required></textarea>
+
+                <div class="sendContainer">
+                    <button type="submit" id="sendbtn">
+                        Send <img id="arrowsymbol" src="./src/images/arrow.png" alt="Arrow">
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="otherContacts">
+            <h1 class="sectiontitle" id="contactTitle">Let's Connect</h1>
+            <p class="connect-subtext">
+                Whether it’s about business or you just wanna chat, feel free to message me!
+            </p>
+
+            <div class="socials-grid">
+                <img class="socials-pic" src="./src/images/githublight.png" id="ghlogo" alt="GitHub">
+                <p class="socials1">jerichodgs</p>
+
+                <img class="socials-pic" src="./src/images/linkedin.png" id="lilogo" alt="LinkedIn">
+                <p class="socials2">Jericho Sineneng</p>
+
+                <!-- your folder HAS email.png -->
+                <img class="socials-pic" src="./src/images/email.png" id="gmlogo" alt="Email">
+                <p class="socials3">sinenengjericho0515@gmail.com</p>
+
+                <img class="socials-pic" src="./src/images/phone.png" id="numlogo" alt="Phone">
+                <p class="socials4">+639686081534</p>
+
+                <img class="socials-pic" src="./src/images/instagram.png" id="iglogo" alt="Instagram">
+                <p class="socials5">@jerichodgs</p>
             </div>
         </div>
+
+        <img src="./src/images/airplane.png" class="airplane" alt="Airplane">
+
     </div>
+</div>
 
-    <div class = "flexContainer" id="contact">
+<footer class="footer">
+    <p>© 2025 Jericho. All rights reserved.</p>
+</footer>
 
-        <h1 class = "contactSection">Let's Talk!</h1>
-            <div class="contactContainer">
-                
-                <div class = "emailContainer">
-                    <form action="https://api.web3forms.com/submit" method="POST" class="contactLeft">
-
-                        <div class="contactLeftTitle">
-                            <h1 class="sectiontitle" id="contactTitle">Send an Email</h1>
-                        </div>
-
-                            <input type="hidden" name="access_key" value="c3bf4445-bfde-4fba-8d67-20d588f7bb01">
-                            <input type="text" name="name" class="contactInputs" placeholder="Your Name" required>
-                            <input type="email" name="email" class="contactInputs" placeholder="Your Email" required>
-                            <textarea name="message" class="contactInputs" placeholder="Your Message" required></textarea>
-
-                            <div class="sendContainer">
-                                <button type="submit" id="sendbtn">Send<img id="arrowsymbol" src="arrow.png"></button>
-                            </div>
-
-                    </form>
-                </div>
-
-                <hr>
-
-                <div class = "otherContacts">
-                    <h1 class="sectiontitle" id="contactTitle">Let's Connect</h1>
-                    <p class="connect-subtext">Whether it’s about business or you just wanna chat, feel free to message me!</p>
-                        <div class="socials-grid">
-                                <img class="socials-pic" src="githublight.png" id="ghlogo">
-                                <p class="socials1">jerichodgs</p>
-
-                                <img class="socials-pic" src="linkedin.png" id="lilogo">
-                                <p class="socials2">Jericho Sineneng</p>
-
-                                <img class="socials-pic" src="email.png" id="gmlogo">
-                                <p class="socials3">sinenengjericho0515@gmail.com</p>
-
-                                <img class="socials-pic" src="phone.png" id="numlogo">
-                                <p class="socials4">+639686081534</p>
-
-                                <img class="socials-pic" src="instagram.png" id="iglogo">
-                                <p class="socials5">@jerichodgs</p>
-                        </div>
-                </div>
-
-                <img src="airplane.png" class="airplane">
-
-            </div>
-    </div>
-
-    <footer class="footer">
-        <p>© 2025 Jericho. All rights reserved.</p>
-    </footer>
-
-    <script src = "script.js" ></script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -185,19 +185,17 @@ body.light-mode #brandName:hover{
     height: 0;
 }
 
-.switch-hero {
-  position: absolute;
-  display: inline-block;
-  width: 56px;
-  height: 30px;
-  vertical-align: middle;
-  cursor: pointer;
-
-  right: 580px;
-  top: 160px;
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 22.5px;
+    cursor: pointer;
+    align-self: center;
+    margin-left: 25px;
 }
 
-.switch-hero input {
+.switch input {
   position: absolute;
   opacity: 0;
   width: 0;
@@ -220,11 +218,11 @@ body.light-mode #brandName:hover{
   position: absolute;
   left: 4px;
   top: 4px;
-  width: 22px;
-  height: 22px;
+  width: 15px;
+  height: 15px;
   background: #fff;
   border-radius: 50%;
-  transition: transform 0.22s cubic-bezier(.2,.9,.2,1);
+  transition: transform 0.22s cubic-bezier(.2,.7,.2,1);
   z-index: 3;
   box-shadow: 0 2px 6px rgba(0,0,0,0.18);
 }
@@ -249,7 +247,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider::before {
-  transform: translateX(26px);
+  transform: translateX(19px);
 }
 
 input:checked + .slider .sun {
@@ -372,10 +370,15 @@ textarea {
 }
 
 .hamburger {
-    display: none;
+    display: none; 
     flex-direction: column;
     cursor: pointer;
     padding: 15px;
+    position: fixed; 
+    top: 2px;
+    right: 5px;
+    z-index: 1002;
+    transition: 0.3s;
 }
 
 .hamburger span {
@@ -402,32 +405,16 @@ body.light-mode .hamburger span {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+.hamburger.active span {
+    background-color: #fff !important; 
+}
+
+body.light-mode .hamburger.active span {
+    background-color: #000 !important;
+}
+
 .mobile-menu {
     display: none;
-    position: fixed;
-    top: 62px;
-    left: 0;
-    width: 100%;
-    background-color: rgba(12, 11, 10, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 999;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.171); 
-}
-
-body.light-mode .mobile-menu {
-    background-color: rgba(245, 245, 245, 0.95);
-}
-
-.mobile-menu.active {
-    display: block;
-}
-
-.mobile-menu .link {
-    display: block;
-    text-align: center;
-    font-size: 1.2em;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.068); 
 }
 
 .heroContainer {
@@ -592,7 +579,7 @@ body.light-mode #loclogo{
 
     margin-left: 5px;
     margin-right: 5px;
-    content: url(/loclogolight.png);
+    content: url("./src/images/loclogolight.png");
 }
 
 body.light-mode .heroContainer {
@@ -894,13 +881,13 @@ body.light-mode .techstack {
 }
 
 body.light-mode #githublogo {
-    content: url("/githubdark.png");
+    content: url("./src/images/githubdark.png");
     width: auto;
     height: 80px;
 }
 
 body.light-mode .locationpic {
-    content: url("/maloloslightpic.jfif");
+    content: url("./src/images/maloloslightpic.jfif");
 }
 
 .projectsSection {
@@ -1212,7 +1199,7 @@ body.light-mode .socials-pic {
 }
 
 body.light-mode #ghlogo{ 
-    content: url("/githubdark.png");
+    content: url("./src/images/githubdark.png");
     height: 55px;
     width: 55px;
 }
@@ -1225,7 +1212,7 @@ body.light-mode #ghlogo{
 }
 
 body.light-mode #lilogo{ 
-    content: url("/linkedindark.png");
+    content: url("./src/images/linkedindark.png");
     margin-right: 15px;
 }
 
@@ -1236,7 +1223,7 @@ body.light-mode #lilogo{
 }
 
 body.light-mode #gmlogo{ 
-    content: url("/emaillight.png");
+    content: url("./src/images/emaillight.png");
 }
 
 #numlogo {
@@ -1246,7 +1233,7 @@ body.light-mode #gmlogo{
 }
 
 body.light-mode #numlogo{ 
-    content: url("/phonelight.png");
+    content: url("./src/images/phonelight.png");
     height: 55px;
     width: 64px;
 }
@@ -1259,12 +1246,12 @@ body.light-mode #numlogo{
 }
 
 body.light-mode #iglogo{ 
-    content: url("/instagramlight.png");
+    content: url("./src/images/instagramlight.png");
     margin-right: 12px;
 }
 
 body.light-mode .airplane{ 
-    content: url("/airplanelight.png");
+    content: url("./src/images/airplanelight.png");
 }
 
 .socials1 {
@@ -1313,32 +1300,97 @@ body.light-mode .airplane{
     display: none;
 }
 
-.switchContainer {
+.switch-hb-container {
         display: none;
     }
-
-@media (max-width: 900px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .linksContainer {
-        display: none;
-    }
-
-    .switch-hero {
-        display: none;
-    }
-
-    .mobile-menu {
-        display: none;
-    }
-}
 
 @media (max-width: 1024px) {
     .hamburger {
         display: flex;
     }
+
+    .mobile-menu {
+    display: block; 
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 200px;
+    max-width: 80%;
+    height: 100vh;
+    background-color: rgba(12, 11, 10, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1001; 
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-top: 60px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+body.light-mode .mobile-menu {
+    background-color: rgba(245, 245, 245, 0.98);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu .link {
+    display: block;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 20px;
+    margin: auto;
+    color: inherit;
+    text-decoration: none;
+    transition: background 0.2s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.062);
+}
+
+.link::after {
+display: none;
+}
+
+#home-link {
+    border-top: 1px solid rgba(255, 255, 255, 0.062);
+}
+
+body.light-mode .mobile-menu .link {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.068);
+}
+
+body.light-mode #home-link {
+    border-top: 1px solid rgba(0, 0, 0, 0.062);
+}
+
+.mobile-menu .link:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+body.light-mode .mobile-menu .link:hover{
+    color: inherit;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000; /* Just below the sidebar */
+    transition: 0.3s ease;
+}
+
+
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
 
     .linksContainer {
         display: none;
@@ -1356,10 +1408,6 @@ body.light-mode .airplane{
         margin: 320px 0;
         max-width: 90%;
         width: auto;
-    }
-
-    .switch-hero {
-        display: none;
     }
 
     #subtextJunior {
@@ -1406,7 +1454,7 @@ body.light-mode .airplane{
         max-width: 600px;
         height: 1100px;
         margin: 0 auto 100px auto;
-        padding: 30px 20px;
+        padding: 0px 20px;
     }
     
     .gridContainer {
@@ -1428,6 +1476,11 @@ body.light-mode .airplane{
         width: 120px;
         padding: 10px;
         padding-top: 15px;
+    }
+
+    body.light-mode #githublogo {
+        height: 65px;
+        width: 65px;
     }
     
     .techlogos {
@@ -1518,47 +1571,15 @@ body.light-mode .airplane{
         padding: 30px 20px;
     }
 
-    .switchContainer {
-        display: none;
-    }
-
-    .mobile-menu {
-        display: none;
-        position: fixed;
-        top: 62px;
-        left: 0;
-        width: 100%;
-        background-color: rgba(12, 11, 10, 0);
-        backdrop-filter: blur(10px);
-        padding-bottom: 12px;
-        padding-top: 4px;
-        z-index: 999;
-    }
-
-    .mobile-menu.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-    box-shadow: 0 4px 30px rgb(0, 0, 0);
 }
 
-    body.light-mode .mobile-menu.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.13);
-}
-
-    body.light-mode .mobile-menu {
-        background-color: rgba(245, 245, 245, 0);
+@media (max-width: 900px) {
+    .hamburger {
+        display: flex;
     }
 
-    body.light-mode .mobile-menu .link {
-        display: block;
-        text-align: center;
-        font-size: 1.2em;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.055);
+    .linksContainer {
+        display: none;
     }
 }
 
@@ -1570,19 +1591,10 @@ body.light-mode .airplane{
         margin: 0;
     }
 
-    .mobile-menu {
-        display: none;
-        position: fixed;
-        top: 62px;
-        left: 0;
-        width: 100%;
-        background-color: rgba(12, 11, 10, 0);
-        backdrop-filter: blur(10px);
-        z-index: 999;
-    }
-
-    body.light-mode .mobile-menu {
-        background-color: rgba(245, 245, 245, 0);
+    body.light-mode #heroTitle {
+        text-align: center;
+        font-size: 6em;
+        margin: 0;
     }
 
 }
@@ -1592,20 +1604,12 @@ body.light-mode .airplane{
         display: none;
     }
 
-    .switch-hero {
-        display: none;
-    }
-
     nav {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         padding: 0 10px;
-    }
-
-    .switchContainer {
-        display: none;
     }
 
     .hamburger {
@@ -1793,29 +1797,5 @@ body.light-mode .airplane{
     
     .techlogos {
         width: 40px;
-    }
-
-    .mobile-menu {
-        position: fixed;
-        top: 62px;
-        left: 0;
-        width: 100%;
-        background-color: rgba(12, 11, 10, 0);
-        backdrop-filter: blur(10px);
-        z-index: 999;
-    }
-
-    body.light-mode .mobile-menu {
-        background-color: rgba(245, 245, 245, 0);
-    }
-
-    .mobile-menu.active {
-        display: block;
-    } 
-
-    .mobile-menu .link {
-        display: block;
-        text-align: center;
-        font-size: 1.2em;
     }
 }
