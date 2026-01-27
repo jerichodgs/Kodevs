@@ -1152,7 +1152,7 @@ body.light-mode .contactInputs {
     background: linear-gradient(45deg, gold, orange);
     border: 1px solid rgba(255, 255, 255, 0.164);
     border-radius: 30px;
-    box-shadow: 0 2px 10px rgb(0, 0, 0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.295);
     color: #ffffff;
     font: 400 20px "Inter";
     transition: transform 0.2s ease, box-shadow 0.2s ease;
