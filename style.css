@@ -20,9 +20,10 @@ html {
 #contact {
     scroll-margin-top: 10px;
 }
+
 :root {
   --bg: #0c0b0a;
-  --bg-pattern: radial-gradient(#423f3f 1px, transparent 1px);
+  --bg-pattern: radial-gradient(#585757 1px, transparent 1px);
   --text: #f5f5f5;
   --accent: gold;
 }
@@ -36,7 +37,7 @@ body {
   overflow-x: hidden;
   background-color: var(--bg);
   background-image: var(--bg-pattern);
-  background-size: 20px 20px;
+  background-size: 27px 27px;
   color: var(--text);
   transition: background 0.3s, color 0.3s;
   
@@ -44,7 +45,7 @@ body {
 
 body.light-mode {
     background-color: #ffffff;
-    background-image: radial-gradient(#adadad 1px, transparent 1px);
+    background-image: radial-gradient(#616161 1px, transparent 1px);
     color: #000000;
     --bg: #f5f5f5;
     --bg-pattern: radial-gradient(#adadad 1px, transparent 1px);
