@@ -46,7 +46,7 @@ body {
 body.light-mode {
     background-color: #ffffff;
     background-image: radial-gradient(#616161 1px, transparent 1px);
-    color: #000000;
+    color: rgb(39, 39, 39);
     --bg: #f5f5f5;
     --bg-pattern: radial-gradient(#adadad 1px, transparent 1px);
     --text: #000000;
@@ -84,31 +84,49 @@ body.light-mode::-webkit-scrollbar-thumb:hover {
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
     position: fixed;
-    flex-wrap: wrap;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 
-    top: 0;
-    left: 0;
-    width: 100%;   
+    width: 90%;
+    max-width: 1600px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.158);
+
+    box-shadow: 
+        0 8px 30px rgba(0, 0, 0, 0.25),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+
     z-index: 1000;
+}
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(1.2px);
-    -webkit-backdrop-filter: blur(8px);
+nav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:rgba(255, 255, 255, 0);
+    pointer-events: none;
 }
 
 body.light-mode nav {
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.13);
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(1px);
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12),
+        inset 0 0 0 1px rgba(255,255,255,0.4);
 }
 
 .toggleswitch {
@@ -119,6 +137,12 @@ body.light-mode nav {
     padding: 6px 5px;
     height: 50px;
     display: flex;
+}
+
+.brandContainer,
+.linksContainer {
+    display: flex;
+    align-items: center;
 }
 
 .kdlogo {
@@ -134,7 +158,7 @@ body.light-mode nav {
     font-family: "Inter";
     font-weight: 800;
     text-decoration: none;
-    color: aliceblue;
+    color: rgba(245, 245, 245, 0.884);
     display: inline-block;
     position: relative;
     transition: 0.5s;
@@ -147,7 +171,7 @@ body.light-mode nav {
 }
 
 body.light-mode #brandName {
-    color: #111;
+    color: rgb(39, 39, 39);
 }
 
 body.light-mode #brandName:hover{
@@ -272,7 +296,7 @@ input:not(:checked) + .slider .sun {
 }
 
 body.light-mode #theme-toggle {
-    color: #111;
+    color: rgb(39, 39, 39);
     border-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -281,27 +305,22 @@ body.light-mode #theme-toggle:hover {
 }
 
 .linksContainer {
-    justify-items: center;
-    float: right;
-    position: relative;
-    flex-shrink: 1;
-
-    flex-wrap: wrap;
-    max-width: 100%;
-
-    top: 8px;
-    right: 30px;
+    top: 0;
+    right: 0;
+    float: none;
+    position: static;
+    margin-left: -100px;
 }
 
 .link {
     position: relative;
-    color: rgb(255, 255, 255);
-    font-size: 0.8em;
+    color: rgba(245, 245, 245, 0.884);
+    font-size: 1.2em;
     font-family: "Inter";
-    font-weight: 200;
+    font-weight: 500;
     text-decoration: none;
     transition: 0.3s;
-    margin: 12px;
+    margin: 30px;
 }
 
 .link:hover{
@@ -324,8 +343,7 @@ width: 100%;
 }
 
 body.light-mode .link {
-    font-size: 0.8em;
-    color: #000000;
+    color: rgb(39, 39, 39);
 }
 
 body.light-mode .link:hover {
@@ -333,38 +351,31 @@ body.light-mode .link:hover {
 }
 
 #emailLogo {
-    max-height: 20px;
-    max-width: 20px;
+    height: 25px;
+    width: auto;
     display: block;
-    padding: 1px;
+    transition: filter 0.3s ease;
+}
+
+body.light-mode #emailLogo {
+    content: url("./src/images/email-black.png");
+    height: 27.2px;
 }
 
 .contactLink {
-    width: 30px;
-    position: relative;
     justify-items: center;
-    display: inline-block;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    border-radius: 3px;
     text-decoration: none;
-    transition: 0.3s;
-    padding: 3px;
-    top: 8.5px;
-    left: 10px;
+    margin-right: 15px;
 }
 
-.contactLink:hover{
-    background-color: gold;
+.contactLink:hover #emailLogo {
+    filter: brightness(0) saturate(100%) invert(74%) sepia(86%) saturate(500%) hue-rotate(5deg);
 }
 
 body.light-mode .contactLink {
     background-color: rgb(255, 255, 255);
 }
 
-body.light-mode .contactLink:hover {
-    background-color: gold;
-}
 
 textarea { 
     resize: none;
@@ -376,8 +387,7 @@ textarea {
     cursor: pointer;
     padding: 15px;
     position: fixed; 
-    top: 2px;
-    right: 5px;
+    right: 20px;
     z-index: 1002;
     transition: 0.3s;
 }
@@ -434,7 +444,7 @@ body.light-mode .hamburger.active span {
     
     padding: 40px 60px;
     border-radius: 12px;
-    color: #ffffff;
+    color: rgba(245, 245, 245, 0.884);
     z-index: 1;
     
 }
@@ -466,16 +476,16 @@ body.light-mode .hamburger.active span {
 #heroTitle {
     font-size: 6em;
     font-weight:600;
-    color: white;
+    color: rgba(245, 245, 245, 0.884);
     font-style: italic;
     margin: 0;
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.253);
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.123);
 }
 
 #subtextJunior{
     font-weight: 400;
     font-size: 2em;
-    color: white;
+    color: rgba(245, 245, 245, 0.884);
     margin: 0;
 }
 
@@ -500,7 +510,7 @@ body.light-mode .hamburger.active span {
 #heroCaption {
     font-weight: 300;
     font-size: 1em;
-    color: #f5f5f5;
+    color: rgba(245, 245, 245, 0.884);
 }
 
 #imaginative {
@@ -584,7 +594,7 @@ body.light-mode #loclogo{
 }
 
 body.light-mode .heroContainer {
-    color: #ffffff;
+    color: rgb(39, 39, 39);
 }
 
 body.light-mode .heroContainer::before {
@@ -606,20 +616,20 @@ body.light-mode .heroContainer::before {
 }
 
 body.light-mode #heroTitle {
-    color: rgb(0, 0, 0);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.26);
+    color: rgb(39, 39, 39);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.055);
 }
 
 body.light-mode #subtextJunior{
-    color: rgb(0, 0, 0);
+    color: rgb(39, 39, 39);
 }
 
 body.light-mode .phtext {
-    color: rgb(0, 0, 0);
+    color: rgb(39, 39, 39);
 }
 
 body.light-mode #heroCaption {
-    color: #000000;
+    color: rgb(39, 39, 39);
 }
 
 #imaginative {
@@ -673,7 +683,7 @@ body.light-mode #heroCaption {
     font-weight: 300;
     font-size: 10em;
     font-style: italic;
-    color: rgba(245, 245, 245, 0.377);
+    color: rgba(245, 245, 245, 0.788);
     position: relative;
     top: 100px;
     left: 0;
@@ -695,7 +705,7 @@ body.light-mode #heroCaption {
     -webkit-backdrop-filter: blur(8px);
     font-family: "Inter";
     font-weight: 100;
-    color: white;
+    color: rgba(245, 245, 245, 0.884);
 }
 
 .aboutTextContainer {
@@ -716,7 +726,7 @@ body.light-mode .aboutSection {
     font-weight: 300;
     font-size: 10em;
     font-style: italic;
-    color: rgba(0, 0, 0, 0.377);
+    color: rgb(39, 39, 39);
     position: relative;
     top: 100px;
     left: 0;
@@ -725,7 +735,7 @@ body.light-mode .aboutSection {
 }
 
 body.light-mode .aboutContainer {
-    color: #111;
+    color: rgb(39, 39, 39);
     background-color: rgba(255, 255, 255, 0.5);
     font-weight: 200;
     border: 0.1px solid rgba(0, 0, 0, 0.2);
@@ -739,13 +749,13 @@ body.light-mode .aboutContainer {
     position: relative;
     margin: 0;
     font-size: 2em;
-    font-weight: 400;
-    color: rgb(255, 255, 255);
+    font-weight: 500;
+    color: rgba(245, 245, 245, 0.884);
     text-shadow: 0 0 3px rgb(255, 255, 255), 0 0 10px rgba(255, 255, 255, 0.322);
 }
 
 body.light-mode .myname {
-    color: rgb(0, 0, 0);
+    color: rgb(39, 39, 39);
     text-shadow: 0 0 5px rgba(255, 255, 255, 0), 0 0 10px rgba(7, 7, 7, 0.178);
 }
 
@@ -785,7 +795,7 @@ body.light-mode .loclogo {
     position: relative;
     top: -10px;
     background-color: #0a0a0a;
-    color: #ffffff;
+    color: rgba(245, 245, 245, 0.884);
 }
 
 .aboutme {
@@ -896,7 +906,7 @@ body.light-mode .locationpic {
     font-weight: 300;
     font-size: 10em;
     font-style: italic;
-    color: rgba(245, 245, 245, 0.377);
+    color: rgba(245, 245, 245, 0.788);
     position: relative;
     top: 25px;
     margin: 0 auto;
@@ -904,14 +914,14 @@ body.light-mode .locationpic {
 }
 
 body.light-mode .projectsSection {
-    color: rgba(0, 0, 0, 0.377);
+    color: rgb(39, 39, 39);
 }
 
 .projectsContainer {
     font-family: "Inter";
     font-weight: 200;
     font-size: 0.8em;
-    color: white;
+    color: rgba(245, 245, 245, 0.884);
     box-sizing: border-box;
     width: 1200px;
     padding: 20px;
@@ -926,7 +936,7 @@ body.light-mode .projectsSection {
 }
 
 body.light-mode .projectsContainer {
-    color: #111;
+    color: rgb(39, 39, 39);
     background-color: rgba(255, 255, 255, 0.5);
     font-weight: 200;
     border: 0.1px solid rgba(0, 0, 0, 0.2);
@@ -1057,7 +1067,7 @@ body.light-mode .projectpic {
     font-weight: 300;
     font-size: 10em;
     font-style: italic;
-    color: rgba(245, 245, 245, 0.377);
+    color: rgba(245, 245, 245, 0.788);
     position: relative;
     top: 100px;
     margin: 0 auto 45px auto;
@@ -1065,7 +1075,7 @@ body.light-mode .projectpic {
 }
 
 body.light-mode .contactSection {
-    color: rgba(0, 0, 0, 0.377);
+    color: rgb(39, 39, 39);
 }
 
 .contactSection {
@@ -1077,7 +1087,7 @@ body.light-mode .contactSection {
 .contactContainer {
     font-family: "Inter";
     font-weight: 100;
-    color: white;
+    color: rgba(245, 245, 245, 0.884);
     box-sizing: border-box;
     width: 1200px;
     padding: 40px;
@@ -1093,7 +1103,7 @@ body.light-mode .contactSection {
 }
 
 body.light-mode .contactContainer {
-    color: #111;
+    color: rgb(39, 39, 39);
     background-color: rgba(255, 255, 255, 0.5);
     font-weight: 200;
     border: 0.1px solid rgba(0, 0, 0, 0.2);
@@ -1318,6 +1328,10 @@ body.light-mode .airplane{
     color: #a1a1a1;
 }
 
+body.light-mode .footer {
+    color: #585757;
+}
+
 .hamburger {
     display: none;
 }
@@ -1329,90 +1343,112 @@ body.light-mode .airplane{
 @media (max-width: 1024px) {
     .hamburger {
         display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .mobile-menu {
-    display: block; 
+    .contactLink {
+        display: none;
+    }
+
+
+/* ===== MOBILE GLASS MENU (BUTTONS ONLY) ===== */
+.mobile-menu {
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 200px;
-    max-width: 80%;
-    height: 100vh;
-    background-color: rgba(12, 11, 10, 0.98);
-    backdrop-filter: blur(10px);
-    z-index: 1001; 
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    padding-top: 60px;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+
+    width: 75%;
+    max-width: 200px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1px;                /* closer together */
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 1001;
 }
 
-body.light-mode .mobile-menu {
-    background-color: rgba(245, 245, 245, 0.98);
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-}
-
+/* Active (visible) state */
 .mobile-menu.active {
-    right: 0;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
 }
 
+
+/* ===== MINIMALIST BUTTONS ===== */
 .mobile-menu .link {
-    display: block;
     text-align: center;
-    font-size: 0.8em;
-    padding: 20px;
-    margin: auto;
-    color: inherit;
+    font-size: 0.95rem;
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.95);
     text-decoration: none;
-    transition: background 0.2s;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.062);
+
+    padding: 20px 18px;
+    margin: 20px;
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: transform 0.12s ease, background 0.12s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.link::after {
-display: none;
+/* Simple tap animation */
+.mobile-menu .link:active {
+    transform: scale(0.96);
+    background: rgba(255, 255, 255, 0.18);
 }
 
-#home-link {
-    border-top: 1px solid rgba(255, 255, 255, 0.062);
-}
 
+/* ===== LIGHT MODE ===== */
 body.light-mode .mobile-menu .link {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.068);
+    color: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.137);
+    border: 1px solid rgba(231, 231, 231, 0.158);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
-body.light-mode #home-link {
-    border-top: 1px solid rgba(0, 0, 0, 0.062);
+body.light-mode .mobile-menu .link:active {
+    background: rgba(0, 0, 0, 0.12);
 }
 
-.mobile-menu .link:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
 
-body.light-mode .mobile-menu .link:hover{
-    color: inherit;
-    background: rgba(0, 0, 0, 0.05);
-}
-
+/* ===== BACKGROUND OVERLAY (STRONGER BLUR) ===== */
 .menu-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(2px);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);          /* more blur */
+    -webkit-backdrop-filter: blur(8px);
     opacity: 0;
     visibility: hidden;
-    z-index: 1000; /* Just below the sidebar */
-    transition: 0.3s ease;
+    transition: 0.25s ease;
+    z-index: 1000;
 }
-
-
 
 .menu-overlay.active {
     opacity: 1;
     visibility: visible;
 }
+
+
 
     .linksContainer {
         display: none;
@@ -1632,6 +1668,10 @@ body.light-mode .mobile-menu .link:hover{
         align-items: center;
         justify-content: space-between;
         padding: 0 10px;
+
+        background: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(18px);
     }
 
     .switch {
@@ -1640,8 +1680,8 @@ body.light-mode .mobile-menu .link:hover{
 
     .hamburger {
         display: flex;
-        margin-right: 20px;
         order: 3;
+        right: 10px;
     }
 
     .brandContainer {
@@ -1650,12 +1690,12 @@ body.light-mode .mobile-menu .link:hover{
 
     body.light-mode #subtextJunior {
         font-size: 1.2em;
-        color: rgb(0, 0, 0);
+        color: rgb(39, 39, 39);
     }
     
     body.light-mode .phtext {
         font-size: 1.2em;
-        color: rgb(0, 0, 0);
+        color: rgb(39, 39, 39);
     }
 
     #brandName {
