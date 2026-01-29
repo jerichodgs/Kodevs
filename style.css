@@ -40,6 +40,8 @@ body {
     background-size: 27px 27px;
     color: var(--text);
     transition: background 0.3s, color 0.3s;
+
+    background: red !important;
 }
 
 body.light-mode {
@@ -439,7 +441,6 @@ body.light-mode .hamburger.active span {
     height: 100vh;
     width: max-content;
     max-width: 100%;
-    margin-right: 100px;
     
     padding: 40px 60px;
     border-radius: 12px;
