@@ -437,8 +437,10 @@ body.light-mode .hamburger.active span {
 
     gap: 200px;
     height: 100vh;
-    width: max-content;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
     
     padding: 40px 60px;
     border-radius: 12px;
@@ -1562,6 +1564,7 @@ body.light-mode .mobile-menu .link:active {
         justify-content: center;
         align-items: center;
         width: 100%;
+        gap: 20px;
     }
 
     #subtextJunior {
@@ -1580,7 +1583,7 @@ body.light-mode .mobile-menu .link:active {
 
     #heroTitle {
         text-align: center;
-        font-size: 8em;
+        font-size: 6em;
         margin: 0;
     }
 
@@ -1743,7 +1746,7 @@ body.light-mode .mobile-menu .link:active {
 
     #heroTitle {
         text-align: center;
-        font-size: 6em;
+        font-size: 5em;
         margin: 0;
     }
 
