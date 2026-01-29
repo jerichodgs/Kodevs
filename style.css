@@ -431,6 +431,7 @@ body.light-mode .hamburger.active span {
     position: relative;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     justify-self: center;
     align-items: center;
     font-family: "Inter";
@@ -438,9 +439,8 @@ body.light-mode .hamburger.active span {
     gap: 200px;
     height: 100vh;
     width: 100%;
-    max-width: 1100px;
+    max-width: 100%;
     margin: 0 auto;
-    box-sizing: border-box;
     
     padding: 40px 60px;
     border-radius: 12px;
@@ -1554,6 +1554,11 @@ body.light-mode .mobile-menu .link:active {
         display: none;
     }
 
+    .hello-text {
+        color: rgba(255, 255, 255, 0.623);
+        font-weight: 300;
+    }
+
     .phtext {
         font-size: 1.5em;
         color: rgb(255, 255, 255);
@@ -1565,6 +1570,7 @@ body.light-mode .mobile-menu .link:active {
         align-items: center;
         width: 100%;
         gap: 20px;
+        box-sizing: border-box;
     }
 
     #subtextJunior {
@@ -1588,6 +1594,7 @@ body.light-mode .mobile-menu .link:active {
     }
 
     .heroSubtext {
+        display: none;
         font-size: 0.5em;
         display: flex;
         justify-content: center;
@@ -1745,9 +1752,7 @@ body.light-mode .mobile-menu .link:active {
 @media (max-width: 768px){
 
     #heroTitle {
-        text-align: center;
         font-size: 5em;
-        margin: 0;
     }
 
 }
