@@ -432,13 +432,12 @@ body.light-mode .hamburger.active span {
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-self: center;
     align-items: center;
     font-family: "Inter";
 
     gap: 200px;
-    margin: 185px auto 100px auto;
-    justify-self: center;
+    height: 100vh;
     width: max-content;
     max-width: 90%;
     
@@ -446,7 +445,6 @@ body.light-mode .hamburger.active span {
     border-radius: 12px;
     color: rgba(245, 245, 245, 0.884);
     z-index: 1;
-    
 }
 
 .heroContainer::before {
@@ -454,7 +452,7 @@ body.light-mode .hamburger.active span {
     position: absolute;
     inset: 0;
     border-radius: 12px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0);
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
     mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%),
@@ -465,19 +463,28 @@ body.light-mode .hamburger.active span {
     -webkit-mask-composite: destination-in;
     pointer-events: none;
     z-index: -1;
+    margin-top: 250px;
+    height: 50vh;
 }
 
 .heroText {
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
 }
 
+.hello-text {
+    font-size: 1.2em;
+    font-weight: 400;
+}
 #heroTitle {
-    font-size: 6em;
+    font-size: 6.5em;
     font-weight:600;
-    color: rgba(245, 245, 245, 0.884);
     font-style: italic;
+
+    color: rgba(245, 245, 245, 0.884);
     margin: 0;
     text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.123);
 }
@@ -582,6 +589,97 @@ body.light-mode .hamburger.active span {
     height: 500px;
     border-radius: 1000px;
     width: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.viewcv-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 25px;
+    width: fit-content;
+    padding: 10px 30px;
+    
+    color: rgba(245, 245, 245, 0.884);
+    font-family: Inter;
+    font-size: 0.9em;
+    font-weight: 300;
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0.075);
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 6px;
+
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body.light-mode .viewcv-button {
+    color: rgb(39, 39, 39);
+    background-color: #2a2a2a15;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-link {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    background: rgba(255, 255, 255, 0.075);
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+}
+
+.gh-link {
+    height: 24px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.li-link {
+    height: 26px;
+    transition: transform 0.2s ease-in-out;
+    filter: brightness(0) saturate(0) invert(100%) sepia(0%) saturate(0%) hue-rotate(0);
+}
+
+
+.viewcv-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 20px rgba(151, 151, 151, 0);
+    color: gold;
+    cursor: pointer;
+}
+
+.hero-link:hover img {
+    filter: brightness(0) saturate(100%) invert(74%) sepia(86%) saturate(500%) hue-rotate(5deg);
+    transform: scale(1.1);
+}
+
+body.light-mode .hero-link {
+    border-radius: 50px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #2a2a2a15;
+}
+
+body.light-mode .li-link{
+    filter: brightness(0) saturate(0) invert(0%) sepia(0%) saturate(0%) hue-rotate(0);
+}
+
+body.light-mode .gh-link{
+    filter: brightness(0) saturate(0) invert(0%) sepia(0%) saturate(0%) hue-rotate(0);
 }
 
 body.light-mode #loclogo{
@@ -1461,11 +1559,7 @@ body.light-mode .mobile-menu .link:active {
     
     .heroContainer {
         flex-direction: column;
-        gap: 30px;
-        padding: 30px 20px;
-        margin: 320px 0;
-        max-width: 90%;
-        width: auto;
+        justify-content: center;
     }
 
     #subtextJunior {
@@ -1479,9 +1573,11 @@ body.light-mode .mobile-menu .link:active {
     .heroText {
         gap: 1px;
         text-align: center;
+        justify-content: center;
+        align-items: center;
     }
 
-    body.light-mode #heroTitle, #heroTitle {
+    #heroTitle {
         text-align: center;
         font-size: 8em;
         margin: 0;
@@ -1649,12 +1745,6 @@ body.light-mode .mobile-menu .link:active {
         margin: 0;
     }
 
-    body.light-mode #heroTitle {
-        text-align: center;
-        font-size: 6em;
-        margin: 0;
-    }
-
 }
 
 @media (max-width: 480px) {
@@ -1709,17 +1799,7 @@ body.light-mode .mobile-menu .link:active {
     }
     
     #heroTitle {
-        font-size: 5em;
-    }
-    
-    body.light-mode #heroTitle {
-        font-size: 5em;
-    }
-
-    .heroContainer {
-        margin: 0;
-        margin-top: 200px;
-        margin-bottom: 250px;
+        font-size: 4em;
     }
 
     body.light-mode .heroSubtext {
