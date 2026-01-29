@@ -1559,6 +1559,8 @@ body.light-mode .mobile-menu .link:active {
     
     .heroContainer {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 100%;
     }
 
