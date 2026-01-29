@@ -439,7 +439,7 @@ body.light-mode .hamburger.active span {
     gap: 200px;
     height: 100vh;
     width: max-content;
-    max-width: 90%;
+    max-width: 100%;
     
     padding: 40px 60px;
     border-radius: 12px;
@@ -1561,6 +1561,7 @@ body.light-mode .mobile-menu .link:active {
     .heroContainer {
         flex-direction: column;
         justify-content: center;
+        width: 100%;
     }
 
     #subtextJunior {
