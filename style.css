@@ -40,8 +40,6 @@ body {
     background-size: 27px 27px;
     color: var(--text);
     transition: background 0.3s, color 0.3s;
-
-    background: red !important;
 }
 
 body.light-mode {
@@ -1561,7 +1559,6 @@ body.light-mode .mobile-menu .link:active {
     
     .heroContainer {
         flex-direction: column;
-        justify-content: center;
         width: 100%;
     }
 
