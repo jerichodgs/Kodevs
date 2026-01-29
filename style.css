@@ -1111,6 +1111,7 @@ body.light-mode .projectsContainer {
 }
 
 .projecttech {
+    text-align: center;
     color: darkgrey; 
     font-style: italic;
     font-weight: 300;
@@ -1573,7 +1574,6 @@ body.light-mode .mobile-menu .link:active {
     .heroText {
         gap: 1px;
         text-align: center;
-        justify-content: center;
         align-items: center;
     }
 
@@ -1675,6 +1675,7 @@ body.light-mode .mobile-menu .link:active {
     .projectdesc {
         font-size: 1.2em;
         padding: 0 10px;
+        line-height: 25px;
     }
     
     .contactSection {
