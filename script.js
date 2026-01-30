@@ -77,3 +77,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+
+// page loaded animation
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
+
+  // 
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -80px 0px"
+    }
+  );
+
+  document.querySelectorAll(".reveal").forEach(el => {
+    observer.observe(el);
+  });
