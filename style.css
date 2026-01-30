@@ -467,7 +467,6 @@ body.light-mode .hamburger.active span {
     max-width: 100%;
     margin: 0 auto;
     
-    padding: 40px 60px;
     border-radius: 12px;
     color: rgba(245, 245, 245, 0.884);
     z-index: 1;
@@ -668,6 +667,7 @@ body.light-mode .viewcv-button {
 
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(1.5px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .gh-link {
@@ -683,13 +683,13 @@ body.light-mode .viewcv-button {
 
 
 .viewcv-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
     box-shadow: 0 2px 20px rgba(151, 151, 151, 0);
     color: gold;
     cursor: pointer;
 }
 
-.hero-link:hover img {
+.hero-link:hover{
     filter: brightness(0) saturate(100%) invert(74%) sepia(86%) saturate(500%) hue-rotate(5deg);
     transform: scale(1.1);
 }
