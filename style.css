@@ -504,6 +504,11 @@ body.light-mode .hamburger.active span {
     font-size: 1.2em;
     font-weight: 400;
 }
+
+body.light-mode .hello-text {
+    color: #2a2a2a;
+}
+
 #heroTitle {
     font-size: 6.5em;
     font-weight:600;
