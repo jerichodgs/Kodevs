@@ -971,25 +971,21 @@ body.light-mode .loclogo {
 }
 
 .html:hover, body.light-mode .html:hover{
-    transform: scale(1.1);
     box-shadow: 0 4px 25px rgb(255, 83, 16);
     cursor: pointer;
 }
 
 .css:hover, body.light-mode .css:hover {
-    transform: scale(1.1);
     box-shadow: 0 4px 30px rgb(18, 101, 255);
     cursor: pointer;
 }
 
 .js:hover, body.light-mode .js:hover{
-    transform: scale(1.1);
     box-shadow: 0 4px 30px rgb(251, 255, 8);
     cursor: pointer;
 }
 
 .github:hover, body.light-mode .github:hover {
-    transform: scale(1.1);
     box-shadow: 0 4px 30px rgb(255, 255, 255);
     cursor: pointer;
 }
