@@ -23,7 +23,7 @@ html {
 
 :root {
     --bg: #0c0b0a;
-    --bg-pattern: radial-gradient(#585757 1px, transparent 1px);
+    --bg-pattern: radial-gradient(#2c2c2c 1px, transparent 1px);
     --text: #f5f5f5;
     --accent: gold;
 }
@@ -44,6 +44,20 @@ body {
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background-image: radial-gradient(#585757 1px, transparent 1px);
+    background-size: 27px 27px;
+
+    filter: blur(1.2px);
+    opacity: 0.6;
+}
+
 body.loaded {
     opacity: 1;
     transform: translateY(0);
@@ -51,12 +65,22 @@ body.loaded {
 
 body.light-mode {
     background-color: #ffffff;
-    background-image: radial-gradient(#616161 1px, transparent 1px);
+    background-image: radial-gradient(#6e6e6e56 1.00001px, transparent 1px);
     color: rgb(39, 39, 39);
     --bg: #f5f5f5;
     --bg-pattern: radial-gradient(#adadad 1px, transparent 1px);
     --text: #000000;
     --accent: gold;
+}
+
+body.light-mode::before {
+    background:
+        radial-gradient(400px 300px at 20% 30%, rgba(0,0,0,0.12), transparent 70%),
+        radial-gradient(500px 350px at 75% 40%, rgba(0,0,0,0.10), transparent 70%),
+        radial-gradient(450px 320px at 50% 75%, rgba(0,0,0,0.08), transparent 75%);
+
+    filter: blur(22px);
+    opacity: 0.45;
 }
 
 body::-webkit-scrollbar {
@@ -108,10 +132,8 @@ body.light-mode::-webkit-scrollbar-thumb:hover {
 }
 
 nav {
-    position: fixed;
+    position: sticky;
     top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
 
     width: 90%;
     max-width: 1600px;
@@ -119,6 +141,7 @@ nav {
 
     display: flex;
     align-items: center;
+    justify-self: center;
     justify-content: space-between;
     padding: 0 25px;
 
@@ -127,7 +150,7 @@ nav {
     -webkit-backdrop-filter: blur(18px);
 
     border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.158);
+    border: 1px solid rgba(255, 255, 255, 0);
 
     box-shadow: 
         0 8px 30px rgba(0, 0, 0, 0.25),
@@ -466,30 +489,11 @@ body.light-mode .hamburger.active span {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
+    margin-top: -40px;
     
     border-radius: 12px;
     color: rgba(245, 245, 245, 0.884);
     z-index: 1;
-}
-
-.heroContainer::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
-    mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%),
-                linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%),
-                        linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%);
-    mask-composite: intersect;
-    -webkit-mask-composite: destination-in;
-    pointer-events: none;
-    z-index: -1;
-    margin-top: 250px;
-    height: 50vh;
 }
 
 .heroText {
@@ -694,9 +698,24 @@ body.light-mode .viewcv-button {
     cursor: pointer;
 }
 
+body.light-mode .viewcv-button:hover {
+    color: gold;
+}
+
 .hero-link:hover{
-    filter: brightness(0) saturate(100%) invert(74%) sepia(86%) saturate(500%) hue-rotate(5deg);
     transform: scale(1.1);
+}
+
+.hero-link:hover .gh-link {
+    filter: brightness(0) saturate(100%)
+            invert(74%) sepia(86%)
+            saturate(500%) hue-rotate(5deg);
+}
+
+.hero-link:hover .li-link {
+    filter: brightness(0) saturate(100%)
+            invert(74%) sepia(86%)
+            saturate(500%) hue-rotate(5deg);
 }
 
 body.light-mode .hero-link {
