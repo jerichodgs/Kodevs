@@ -1127,15 +1127,15 @@ body.light-mode .projectsContainer {
 .projectname1 {
     grid-area: name;
     text-align: center;
-    font-family: "Trade Winds";
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: 50px;
 }
 
 .projectname2 {
     grid-area: name;
     text-align: center;
-    font-weight: 700;
+    font-family: "Trade Winds";
+    font-weight: 400;
     margin-bottom: 50px;
 }
 
@@ -1151,7 +1151,6 @@ body.light-mode .projectsContainer {
     object-fit: cover;     
     object-position: center; 
     border-radius: 10px;
-    cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 30px rgb(0, 0, 0);
 }
@@ -1175,25 +1174,23 @@ body.light-mode .projectpic {
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
-    cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.493);
 }
 
 #projectpic1:hover{
     transform: scale(1.04);
-    box-shadow: 0 5px 25px rgba(255, 30, 0, 0.925);
-    cursor: pointer;
+    box-shadow: 0 4px 20px rgb(129, 173, 255);
 }
 
 #projectpic2:hover{
     transform: scale(1.04);
-    box-shadow: 0 5px 25px rgb(129, 173, 255);
+    box-shadow: 0 4px 20px rgba(255, 30, 0, 0.925);
 }
 
 #projectpic3:hover{
     transform: scale(1.04);
-    box-shadow: 0 5px 25px rgb(255, 208, 0);
+    box-shadow: 0 4px 20px rgb(255, 208, 0);
 }
 
 .projectdesc {
